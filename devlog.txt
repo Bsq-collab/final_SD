@@ -66,3 +66,5 @@ finished design document
 bayanB -- 2017-12-21 22:32:07
 Updated How to Play, Description, Site Map, and post MVP ideas
 
+wengC -- 2017-12-23 14:13:23
+Design doc update after 12 hours of sleep :D

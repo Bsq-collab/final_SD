@@ -68,3 +68,6 @@ Updated How to Play, Description, Site Map, and post MVP ideas
 
 wengC -- 2017-12-23 14:13:23
 Design doc update after 12 hours of sleep :D
+bayanB -- 2017-12-23 17:33:06
+Added data,static,templates, and util folders
+

@@ -71,3 +71,6 @@ Design doc update after 12 hours of sleep :D
 bayanB -- 2017-12-23 17:33:06
 Added data,static,templates, and util folders
 
+bayanB -- 2017-12-23 19:32:03
+Created the base.html file with links to bootstrap css. Filled in the home page which will link to a get started page and a directions page. I added directions of how to play in case anyone has never watched Wheel of Fortune before. Explained what each thing does (spin vowel hint and solve)
+

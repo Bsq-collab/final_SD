@@ -74,3 +74,6 @@ Added data,static,templates, and util folders
 bayanB -- 2017-12-23 19:32:03
 Created the base.html file with links to bootstrap css. Filled in the home page which will link to a get started page and a directions page. I added directions of how to play in case anyone has never watched Wheel of Fortune before. Explained what each thing does (spin vowel hint and solve)
 
+bayanB -- 2017-12-24 15:11:51
+Completed playerSignUp-- it asks the user to choose how many players will be playing. It also explains that there will be 3 players regardless and the remaining players will be computers
+

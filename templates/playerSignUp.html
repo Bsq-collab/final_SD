@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+- Player Sign Up
+{% endblock %}
+
+{% block body %}
+<br>
+<h2>Customize</h2>
+<br>
+
+<p>
+  Before we can start playing, how many contestants will be playing (max 3). If you have less than 3 you will play against a computer. For example if there are 2 players we will provide 1 computer player.
+</p>
+<br>
+<div class="mx-auto" style="width: 390px;">
+  <!--suppress HtmlUnknownTarget -->
+  <form action="/playerSignUp" method="post" id="options">
+    <div class="form-group">
+      <label for="Number"> How Many Non-Computer Players?</label>
+      <br>
+      <select class="form-control" id="difficulty" name="difficulty">
+        <option selected> </option>
+
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+
+      </select>
+    </div>
+    <br>
+
+    <center>
+      <button type="submit" class="btn btn-primary" name="done" value="Done" form="options">
+        PLAY!
+      </button>
+    </center>
+  </form>
+</div>
+{% endblock %}

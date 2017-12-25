@@ -77,3 +77,6 @@ Created the base.html file with links to bootstrap css. Filled in the home page 
 bayanB -- 2017-12-24 15:11:51
 Completed playerSignUp-- it asks the user to choose how many players will be playing. It also explains that there will be 3 players regardless and the remaining players will be computers
 
+bayanB -- 2017-12-24 20:16:11
+started to work on database functions, haven't tested yet because I don't have anyvalues from jeopardy or getty images. but right now it creates the two tables (accounts won't be used)
+

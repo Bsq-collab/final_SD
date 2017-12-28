@@ -80,3 +80,6 @@ Completed playerSignUp-- it asks the user to choose how many players will be pla
 bayanB -- 2017-12-24 20:16:11
 started to work on database functions, haven't tested yet because I don't have anyvalues from jeopardy or getty images. but right now it creates the two tables (accounts won't be used)
 
+bayanB -- 2017-12-27 22:52:25
+chooseHint allows users to decide whether they want to buy a getty hint, jeopardy question hint or if they change their mind they can select none
+

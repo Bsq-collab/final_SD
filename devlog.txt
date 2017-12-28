@@ -83,3 +83,7 @@ started to work on database functions, haven't tested yet because I don't have a
 bayanB -- 2017-12-27 22:52:25
 chooseHint allows users to decide whether they want to buy a getty hint, jeopardy question hint or if they change their mind they can select none
 
+bayanB -- 2017-12-27 23:21:23
+Added spin.html which randomly generates a number, displays the puzzle, points already acquired, and asks the user for a consonant
+
+

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<h1>Vowel</h1>
+<br>
+<div class="mx-auto" style="width: 600px;">
+
+  {{ puzzle }}
+
+  <br>
+  {{ player }} : {{ player.points }}
+
+
+  <br>
+  {% if randomNum|int !=0 %}
+  Pick a Consonant!
+  <br>
+  <form action="/vowel" method="post" id="vowel">
+
+    <!--{% include "flash.html" %}  If letter is already picked flash-->
+
+
+    <div class="form-group">
+      <label for="vowel">Your Vowel:</label>
+      <input type="text" class="form-control" id="Vowel" name="Vowel" required>
+    </div>
+    <br>
+    <input type="submit" class="btn btn-primary" value="Buy Vowel" id="submit">
+
+  </form>
+  {% endif %}
+
+</div>
+{% endblock body %}

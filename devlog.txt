@@ -68,6 +68,8 @@ Updated How to Play, Description, Site Map, and post MVP ideas
 
 wengC -- 2017-12-23 14:13:23
 Design doc update after 12 hours of sleep :D
+Revised site map and role distribution
+
 bayanB -- 2017-12-23 17:33:06
 Added data,static,templates, and util folders
 
@@ -86,9 +88,11 @@ chooseHint allows users to decide whether they want to buy a getty hint, jeopard
 bayanB -- 2017-12-27 23:21:23
 Added spin.html which randomly generates a number, displays the puzzle, points already acquired, and asks the user for a consonant
 
-
 bayanB -- 2017-12-27 23:35:12
-Added template for choosing a vowel. It's very similar to spin.html except it requires the user to input a vowel not a consonant. 
+Added template for choosing a vowel. It's very similar to spin.html except it requires the user to input a vowel not a consonant.
 
 leeV -- 2018-01-01 20:24:45
 Updated design doc: added data types to database schema -- first devlog update of the new year! :)
+wengC -- 2018-01-02 12:59:07
+added getty image api interface
+

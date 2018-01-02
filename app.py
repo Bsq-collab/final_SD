@@ -1,18 +1,25 @@
 from flask import Flask, render_template
 
 
-app= Flask(__name__)
+app = Flask(__name__)
 
-#default homepage
+
+# default homepage
 @app.route("/")
 def welcome():
-    return ""
+    return render_template("home.html")
 
-@app.route("/view")
+
+@app.route("/game")
 def tablify():
-    return ""
+    return "this is supposed to be the game page(js)""
 
 
-if __name__== "__main__":
-    app.debug=True
+@app.route("/directions ")
+def direct():
+    return "this is supposed to explain the game"
+
+
+if __name__ == "__main__":
+    app.debug = True
     app.run()

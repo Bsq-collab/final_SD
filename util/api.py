@@ -12,7 +12,7 @@ def jeopardy():
         round_dict['hint'] = udict['question']
         round_dict['title'] = udict['category']['title']
         round_dict['answer'] = udict['answer'].lower()
-        return udict
+        return round_dict
     except:
         print "Error: API key was set up incorrectly! jeopardy"
         d = {'hint': "oops"}

@@ -96,3 +96,8 @@ Updated design doc: added data types to database schema -- first devlog update o
 wengC -- 2018-01-02 12:59:07
 added getty image api interface
 
+ibnulJ -- 2018-01-02 13:04:27
+Created basic method for getting information from the Jeopardy API
+
+leeV -- 2018-01-01 13:07:32
+Basic integration of flask (app.py routes to some html templates)

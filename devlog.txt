@@ -90,3 +90,5 @@ Added spin.html which randomly generates a number, displays the puzzle, points a
 bayanB -- 2017-12-27 23:35:12
 Added template for choosing a vowel. It's very similar to spin.html except it requires the user to input a vowel not a consonant. 
 
+leeV -- 2018-01-01 20:24:45
+Updated design doc -- first devlog update of the new year! :)

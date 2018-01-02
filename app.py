@@ -15,13 +15,10 @@ def tablify():
     return "this is supposed to be the game page(js)""
 
 
-@app.route("/directions ")
-def direct():
-    return "this is supposed to explain the game"
-
 @app.route("/directions")
 def instructions():
     return render_template("directions.html")
+
 
 @app.route("/start")
 def start():

@@ -101,3 +101,6 @@ Created basic method for getting information from the Jeopardy API
 
 leeV -- 2018-01-01 13:07:32
 Basic integration of flask (app.py routes to some html templates)
+bayanB -- 2018-01-02 16:27:18
+worked on the databases. I haven't tested it yet because I need an API key, but it takes the dictionary form api.py and populates a database with hint title and answer
+

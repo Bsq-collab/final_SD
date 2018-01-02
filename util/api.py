@@ -17,3 +17,4 @@ def jeopardy():
         print "Error: API key was set up incorrectly! jeopardy"
         d = {'hint': "oops"}
         return d
+print jeopardy();

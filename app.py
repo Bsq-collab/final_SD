@@ -24,17 +24,6 @@ def instructions():
 def start():
     return render_template("playerSignUp.html")
 
-@app.route("/hintchoose")
-def choosehint():
-    return render_template("chooseHint.html")
-
-@app.route("/buyvowel")
-def choosevowel():
-    return render_template("vowel.html")
-
-@app.route("/spin")
-def spinwheel():
-    return render_template("spin.html")
 
 @app.route("/end")
 def done():

@@ -11,7 +11,7 @@ def getKey():
         print "****API KEY NOT FOUND******"
         return ""
 
-def image(hint): #input the description of the desired image, which is the answer to the jeopardy question
+def image(answer): #input the description of the desired image, which is the answer to the jeopardy question
     answer = urllib.quote(answer)
     key = getKey()
     #print key

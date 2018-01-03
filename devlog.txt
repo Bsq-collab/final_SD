@@ -107,3 +107,6 @@ worked on the databases. I haven't tested it yet because I need an API key, but 
 leeV -- 2018-01-03 12:06:03
 cleaned up routes
 
+ibnulJ -- 2018-01-03 13:14:21
+fixed jeopardy api function to filter out hazardous characters
+

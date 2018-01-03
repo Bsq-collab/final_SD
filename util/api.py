@@ -9,15 +9,34 @@ def jeopardy():
         uread = urllib2.urlopen(jeopardy_url).read()
         udict = json.loads(uread)[0]
         round_dict = {}
-        round_dict['hint'] = udict['question']
-        round_dict['title'] = udict['category']['title']
-        round_dict['answer'] = udict['answer'].lower()
+        round_dict['hint'] = fix_answer(udict['question'])
+        round_dict['title'] = fix_answer(udict['category']['title'])
+        round_dict['answer'] = fix_answer(udict['answer'])
         return round_dict
     except:
         print "Error: API key was set up incorrectly! jeopardy"
         d = {'hint': "oops"}
         return d
 
+def fix_answer(thing):
+    final = thing.lower()
+    print "THIS IS THE THING: " + final
+    try:
+        while (True) :
+            start = final.index('<')
+            end = final.index('>')
+            final = final[:start] + final[end+1:]
+            print final
+    except:
+        try:
+            while (True) :
+                start = final.index('(')
+                end = final.index(')')
+                final = final[:start] + final[end+1:]
+            print final
+        except:
+            print "no gang signs"
+    return final
 
 dictionary= jeopardy();
 print "\n\n\n\n\n dictionary:"

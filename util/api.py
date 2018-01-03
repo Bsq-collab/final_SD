@@ -17,4 +17,11 @@ def jeopardy():
         print "Error: API key was set up incorrectly! jeopardy"
         d = {'hint': "oops"}
         return d
-print jeopardy();
+
+
+dictionary= jeopardy();
+print "\n\n\n\n\n dictionary:"
+print dictionary
+print "\n\ndictionary[hint]: " + dictionary['hint']
+print "\n\ndictionary['title']: " + dictionary['title']
+print "\n\ndictionary[answer]: " + dictionary["answer"]

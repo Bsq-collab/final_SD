@@ -110,3 +110,6 @@ cleaned up routes
 ibnulJ -- 2018-01-03 13:14:21
 fixed jeopardy api function to filter out hazardous characters
 
+bayanB -- 2018-01-03 22:24:12
+the first 3 columns of the database is working fine, the images link api part is not working as of right now.
+

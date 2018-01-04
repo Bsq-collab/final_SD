@@ -20,22 +20,30 @@ def jeopardy():
 
 def fix_answer(thing):
     final = thing.lower()
-    print "THIS IS THE THING: " + final
+   # print "THIS IS THE THING: " + final
     try:
         while (True) :
             start = final.index('<')
             end = final.index('>')
             final = final[:start] + final[end+1:]
-            print final
+           # print final
     except:
         try:
             while (True) :
                 start = final.index('(')
                 end = final.index(')')
                 final = final[:start] + final[end+1:]
-            print final
+           # print final
         except:
-            print "no gang signs"
+            try:
+                while (True) :
+                    ind = final.index("'")
+
+                    final = final[0:ind] + final[ind+1:]
+                  #  print "final: \n\n"+ final+"\n\n"
+            except:
+                print "no gang signs"
+
     return final
 
 dictionary= jeopardy();

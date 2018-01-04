@@ -4,7 +4,7 @@ import json
 
 def getKey():
     try:
-        f = open("util/gettykeys.txt")
+        f = open("gettykeys.txt")
         key = f.read()
         return key.strip() #Removes Whitespace
     except Exception as e:

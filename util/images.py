@@ -4,14 +4,14 @@ import json
 
 def getKey():
     try:
-        f = open("util/gettykeys.txt")
+        f = open("gettykeys.txt")
         key = f.read()
         return key.strip() #Removes Whitespace
     except Exception as e:
         print "****API KEY NOT FOUND******"
         return ""
 
-def image(hint): #input the description of the desired image, which is the answer to the jeopardy question
+def image(answer): #input the description of the desired image, which is the answer to the jeopardy question
     answer = urllib.quote(answer)
     key = getKey()
     #print key
@@ -27,3 +27,4 @@ def image(hint): #input the description of the desired image, which is the answe
         return "https://rlv.zcache.com/sad_smiley_face_classic_round_sticker-r364e0eed23d248b982dc0b717710afc1_v9wth_8byvr_324.jpg"
     else:
         return dat['images'][0]['display_sizes'][0]['uri'] #outputs a url to the image
+print image("juice")

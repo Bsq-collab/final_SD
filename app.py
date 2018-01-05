@@ -12,7 +12,7 @@ def welcome():
 
 @app.route("/game")
 def tablify():
-    return "this is supposed to be the game page(js)""
+    return "this is supposed to be the game page(js)"
 
 
 @app.route("/directions")
@@ -23,6 +23,12 @@ def instructions():
 @app.route("/start")
 def start():
     return render_template("playerSignUp.html")
+
+
+@app.route("/end")
+def done():
+    return render_template("congrats.html")
+
 
 
 if __name__ == "__main__":

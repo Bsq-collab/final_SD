@@ -7,7 +7,6 @@ def getKey():
     try:
         f = open("gettykeys.txt")
         key = f.read()
-        print key
         return key.strip()  # Removes Whitespace
     except Exception as e:
         print e
@@ -23,7 +22,7 @@ def image(answer):  # input the description of the desired image, which is the a
         url = urllib2.Request("https://api.gettyimages.com/v3/search/images?sort_order=most_popular&phrase=" + answer, headers={'Api-Key': getKey()})
     else:
         return key
-    print url
+    # print url
     uResp = urllib2.urlopen(url)
     contentsraw = uResp.read()
     dat = json.loads(contentsraw)

@@ -23,6 +23,13 @@ def start():
 @app.route("/game")
 def game():
     # pass round data
+    # bar at the top w player #s + money
+    # letter board: while not full, continue cycling through players guessing letters
+    # when full, the game is over -> displays name of winner + $ 
+    # spinning the wheel is just an html table changing colors
+    # basic player turn example: guess phrase/buy a vowel/spin -> displays whether the letter was right or not (refresh board) -> end turn
+    # letters guessed are stored in an array
+    # cpus guess random letters
     return render_template("game.html")
 
 

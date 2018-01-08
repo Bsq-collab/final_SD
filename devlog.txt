@@ -116,3 +116,6 @@ the first 3 columns of the database is working fine, the images link api part is
 wengC berriB -- 2018-01-05 13:14:44
 fixed api keys and fixed database
 
+wengC -- 2018-01-08 12:59:41
+cleaned up files to use JS rather than routes to process the game
+

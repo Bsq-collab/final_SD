@@ -10,11 +10,6 @@ def welcome():
     return render_template("home.html")
 
 
-@app.route("/game")
-def tablify():
-    return "this is supposed to be the game page(js)"
-
-
 @app.route("/directions")
 def instructions():
     return render_template("directions.html")
@@ -25,10 +20,10 @@ def start():
     return render_template("playerSignUp.html")
 
 
-@app.route("/end")
-def done():
-    return render_template("congrats.html")
-
+@app.route("/game")
+def game():
+    # pass round data
+    return render_template("game.html")
 
 
 if __name__ == "__main__":

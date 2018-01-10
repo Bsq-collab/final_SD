@@ -20,7 +20,7 @@ def start():
     return render_template("playerSignUp.html")
 
 
-@app.route("/game")
+@app.route("/game", methods=["POST","GET"])
 def game():
     # pass round data
     # bar at the top w player #s + money

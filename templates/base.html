@@ -25,8 +25,15 @@
       </a>
     </nav>
     <br><br><br>
-    {% block body %}
 
-    {% endblock body %}
+    <div class="notNav" name="body">
+      {% block body %}
+
+      {% endblock body %}
+    </div>
+
+    {% block footer %}
+
+    {% endblock footer %}
   </body>
 </html>

@@ -1,10 +1,21 @@
 {% extends "base.html" %}
 
 {% block title %}
-- Game
+  - Game
 {% endblock %}
+
+
 {% block body %}
+  {{phrase}}
+{% endblock %}
 
-{{phrase}}
 
+{% block footer %}
+  <nav class="navbar fixed-bottom navbar-light bg-light">
+    <ul id="scores" class="nav navbar-nav flex-row">
+      <li class="nav-item"><a>player 1</a></li>
+      <li class="nav-item"><a>  player 3: </a></li>
+      <li class="nav-item"><a>  player 2: </a></li>
+    </ul>
+  </nav>
 {% endblock %}

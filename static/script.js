@@ -1,5 +1,6 @@
 // defined for game
-const cons = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+const cons = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
+'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
 const vow = ['a', 'e', 'i', 'o', 'u'];
 
 // keeps track of current game's vowels and consts
@@ -51,11 +52,12 @@ for (var i = 0; i < ans.length; i++){
     ell.setAttribute("name", ans[i][o]);
     ell.className = "char";
     // check if the character needs to be hidden
-    if(cons.indexOf(ans[i][o] >= 0 || vow.indexOf(ans[i][o] >= 0)))
+    if(cons.indexOf(ans[i][o]) >= 0 || vow.indexOf(ans[i][o]) >= 0){
       ell.innerHTML = "_";
-    else
-      ell.innerHTML = ans[i][0];
-
+    }else{
+      ell.innerHTML = ans[i][o];
+      console.log("asdasdasdasdsad");
+    }
     el.appendChild(ell);
     el.innerHTML += "\n"
   }
@@ -64,22 +66,29 @@ for (var i = 0; i < ans.length; i++){
 }
 
 var chars = category.getElementsByTagName("li");
-body.appendChild(category);
+category = body.appendChild(category);
 body.innerHTML += "\n"
 console.log(chars)
+
+
 
 // buttons
 var buttons = document.getElementById("buttons");
 
+// get the popups from the html file
 var popups = buttons.getElementsByClassName("popup")
-console.log(popups[0]);
 
+//
 var guess = document.createElement("button");
-guess.onclick = function(){
+guess = buttons.appendChild(guess);
+var guessPop = function(){
   popups[0].style.display = "block";
-}
-guess.innerHTML = "Guess a Constanent"
-buttons.appendChild(guess);
+};
+var guessClose = function(){
+  popups[0].style.display = "none";
+};
+guess.innerHTML = "Guess a Consonant"
+guess.setAttribute("onclick", "javascript:guessPop()");
 
 buttons.innerHTML += "\n"
 

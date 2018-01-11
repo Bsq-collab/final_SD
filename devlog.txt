@@ -119,3 +119,6 @@ fixed api keys and fixed database
 wengC -- 2018-01-08 12:59:41
 cleaned up files to use JS rather than routes to process the game
 
+bayanB -- 2018-01-10 19:59:08
+worked on getting the random letter selection to work for a computer. and also included a function called make blanks that creates a blank for each character
+

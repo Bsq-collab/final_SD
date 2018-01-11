@@ -23,21 +23,15 @@ def start():
 
 @app.route("/game", methods=["POST", "GET"])
 def game():
-    # defines the list of consonants and list of vowels
-    cons = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
-    vow = ['a', 'e', 'i', 'o', 'u']
-
     dictionary = api.jeopardy()
-    ans = dictionary['answer']
-    
     # bar at the top w player #s + money
     # letter board: while not full, continue cycling through players guessing letters
     # when full, the game is over -> displays name of winner + $
     # spinning the wheel is just an html table changing colors
     # basic player turn example: guess phrase/buy a vowel/spin -> displays whether the letter was right or not (refresh board) -> end turn
 
-    random_letter(cons) # cpu guesses
-    return render_template("game.html")
+    # random_letter(cons) # cpu guesses
+    return render_template("game.html", round = dictionary)
 
 
 @app.route("/letters", methods=["POST"])

@@ -19,11 +19,35 @@
       <span class="close">&times;</span>
       <p>Enter a consonant as your guess:</p>
       <form class="" action="index.html" method="post" onsubmit="check()">
-        <input type="text" maxlength="1" name="C"></input>
+	<input type="text" maxlength="1" name="C"></input> 
       </form>
     </div>
   </div>
 </div>
+
+  <div id="guessVowel" class="popup">
+    <div class="words">
+      <span class="close">&times;</span>
+      <p>Enter a vowel as your guess:</p>
+      <form class="" action="index.html" method="post" onsubmit="check()">
+        <input type="text" maxlength="1" name="V"></input>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+  <div id="hint" class="popup">
+    <div class="words">
+      <span class="close">&times;</span>
+      <p>Buy a hint?</p>
+      <form class="" action="index.html" method="post" onsubmit="check()">
+        <input type="submit" name="H" value="Yes"></input>
+      </form>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
 
 <br>

@@ -23,10 +23,13 @@ def start():
 
 @app.route("/game", methods=["POST", "GET"])
 def game():
+    # defines the list of consonants and list of vowels
     cons = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
     vow = ['a', 'e', 'i', 'o', 'u']
+
     dictionary = api.jeopardy()
     ans = dictionary['answer']
+    
     # bar at the top w player #s + money
     # letter board: while not full, continue cycling through players guessing letters
     # when full, the game is over -> displays name of winner + $
@@ -43,8 +46,17 @@ def random_letter(letters):
     return letters.pop(x)
 
 
+# this makes the blanks using the string, prints any characters that aren't letters.
 def make_blanks(string):
     blank=""
+    for each in string:
+        if(each.isalpha()):
+            blank+="_ "
+        elif(each==" "):
+            blank+="\n"
+        else:
+            blank+=each
+    return blank
 
 if __name__ == "__main__":
     app.debug = True

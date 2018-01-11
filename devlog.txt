@@ -122,3 +122,6 @@ cleaned up files to use JS rather than routes to process the game
 bayanB -- 2018-01-10 19:59:08
 worked on getting the random letter selection to work for a computer. and also included a function called make blanks that creates a blank for each character
 
+wengC -- 2018-01-11 09:31:59
+JS started - words displayed and buttons started
+

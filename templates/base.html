@@ -14,8 +14,8 @@
           integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
           crossorigin="anonymous">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <script src="/static/jquery-3.1.1.min.js"></script>
   </head>
 
   <body class="center">
@@ -26,12 +26,17 @@
     </nav>
     <br><br><br>
 
-    <div class="notNav" name="body">
+    <div class="notNav" id="body">
       {% block body %}
 
       {% endblock body %}
     </div>
 
+    <div class="notNav" id="buttons">
+      {% block buttons %}
+
+      {% endblock %}
+    </div>
     {% block footer %}
 
     {% endblock footer %}

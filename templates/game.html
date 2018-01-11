@@ -8,7 +8,7 @@
 {% block body %}
   <p id="answer">{{round["answer"]}}</p>
   <p id="title">{{round["title"]}}</p>
-  <p id="hint">{{round["hint"]}}</p>
+  <p  id="hint">{{round["hint"]}}</p>
 {% endblock %}
 
 
@@ -17,8 +17,8 @@
     <div class="words">
       <span class="close">&times;</span>
       <p>Enter a consonant as your guess:</p>
-      <form class="" action="index.html" method="post" onsubmit="check()">
-        <input type="text" maxlength="1" name="C"></input>
+      <form id="consonant" onsubmit="false">
+        <input type="text" maxlength="1" id="C"></input>
       </form>
     </div>
   </div>

@@ -83,19 +83,36 @@ var close = function(){
 // call close when you click on an X
 var Xs = document.getElementsByClassName("close");
 for(var i = 0; i < Xs.length; i++){
-  Xs[i].addEventListener("mouseover", close());
+  Xs[i].addEventListener("click", close);
   console.log(Xs[i]);
 }
 
-// guess button
+// stop submiting of forms
+$(document).ready(function(){
+    $("form").click(function(event){
+        event.preventDefault();
+    });
+});
+
+// guess button brings up popup for guess
 var guess = document.createElement("button");
 guess = buttons.appendChild(guess);
+guess.innerHTML = "Guess a Consonant"
 var guessPop = function(){
   popups[0].style.display = "block";
 };
-guess.innerHTML = "Guess a Consonant"
 guess.setAttribute("onclick", "javascript:guessPop()");
 
+var checkc = function(){
+  var char = document.getElementById('C');
+  console.log("|" + char.innerHTML + "|");
+  if (tempc.indexOf(char.innerHTML) == -1){
+    alert("please choose a consonant");
+  }else{
+    alert("yay");
+  }
+}
+document.getElementById("consonant").addEventListener("submit", checkc);
 
 // background specific to this page
 document.getElementsByTagName("body")[0].style.backgroundImage = "url(http://vignette1.wikia.nocookie.net/gameshows/images/6/61/Wheel_of_Fortune_Puzzle_Board_6.png/revision/latest?cb=20130127193907)"

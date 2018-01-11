@@ -11,14 +11,17 @@ var tempv = vow;
 var answer = document.getElementById("answer");
 var title = document.getElementById("title");
 var hint = document.getElementById("hint");
+var pic= document.getElementById("pic");
 
 var ans = answer.innerHTML;
 var tit = title.innerHTML;
 var hin = hint.innerHTML;
+var p= pic.innerHTML;
 
 console.log(ans);
 console.log(tit);
 console.log(hin);
+console.log(p);
 
 // process ans into 2d array of characters (ans[]->word; ans[][]->char)
 ans = ans.split(" ");

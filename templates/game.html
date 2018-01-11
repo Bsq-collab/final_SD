@@ -8,8 +8,9 @@
 {% block body %}
   <p id="answer">{{round["answer"]}}</p>
   <p id="title">{{round["title"]}}</p>
-  <p  id="hint">{{round["hint"]}}</p>
-{% endblock %}
+  <p id="hint">{{round["hint"]}}</p>
+  <p id="pic">{{round["pic"]}}</p>
+  {% endblock %}
 
 
 {% block buttons %}
@@ -17,12 +18,36 @@
     <div class="words">
       <span class="close">&times;</span>
       <p>Enter a consonant as your guess:</p>
-      <form id="consonant" onsubmit="false">
-        <input type="text" maxlength="1" id="C"></input>
+      <form class="" action="index.html" method="post" onsubmit="check()">
+	<input type="text" maxlength="1" name="C"></input>
       </form>
     </div>
   </div>
 </div>
+
+  <div id="guessVowel" class="popup">
+    <div class="words">
+      <span class="close">&times;</span>
+      <p>Enter a vowel as your guess:</p>
+      <form class="" action="index.html" method="post" onsubmit="check()">
+        <input type="text" maxlength="1" name="V"></input>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+  <div id="hint" class="popup">
+    <div class="words">
+      <span class="close">&times;</span>
+      <p>Buy a hint?</p>
+      <form class="" action="index.html" method="post" onsubmit="check()">
+        <input type="submit" name="H" value="Yes"></input>
+      </form>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
 
 <br>
@@ -30,9 +55,9 @@
 {% block footer %}
 <nav class="navbar fixed-bottom navbar-light bg-light">
   <ul id="scores" class="nav navbar-nav bd-navbar-nav flex-row">
-    player 1:<li id="p1" class="nav-item"><a></a></li>
-    player 2:<li id="p2" class="nav-item"><a></a></li>
-    player 3:<li id="p3" class="nav-item"><a></a></li>
+    player 1:<li id="p1" class="nav-item">{{points[0]}}</li>
+    player 2:<li id="p2" class="nav-item">{{points[1]}}</li>
+    player 3:<li id="p3" class="nav-item">{{points[2]}}</li>
   </ul>
 </nav>
 <script src="/static/script.js"></script>

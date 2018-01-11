@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from util import api
+from util import images
 import random
 
 app = Flask(__name__)
@@ -24,6 +25,8 @@ def start():
 @app.route("/game", methods=["POST", "GET"])
 def game():
     dictionary = api.jeopardy()
+    dictionary['pic']= images.image(dictionary['answer'])
+    pts=[0,0,0]
     # bar at the top w player #s + money
     # letter board: while not full, continue cycling through players guessing letters
     # when full, the game is over -> displays name of winner + $
@@ -31,7 +34,7 @@ def game():
     # basic player turn example: guess phrase/buy a vowel/spin -> displays whether the letter was right or not (refresh board) -> end turn
 
     # random_letter(cons) # cpu guesses
-    return render_template("game.html", round = dictionary)
+    return render_template("game.html", round = dictionary,points=pts)
 
 
 @app.route("/letters", methods=["POST"])

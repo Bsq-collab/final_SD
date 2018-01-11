@@ -16,10 +16,6 @@ var ans = answer.innerHTML;
 var tit = title.innerHTML;
 var hin = hint.innerHTML;
 
-answer.remove();
-title.remove();
-hint.remove();
-
 console.log(ans);
 console.log(tit);
 console.log(hin);
@@ -32,7 +28,8 @@ for (var i = 0; i < ans.length; i++){
 }
 
 // create the display
-var body = document.getElementById('body');
+var body = document.getElementById('bodyy');
+body.innerHTML = "\n";
 
 // insert title
 var category = document.createElement('div');
@@ -56,7 +53,6 @@ for (var i = 0; i < ans.length; i++){
       ell.innerHTML = "_";
     }else{
       ell.innerHTML = ans[i][o];
-      console.log("asdasdasdasdsad");
     }
     el.appendChild(ell);
     el.innerHTML += "\n"
@@ -78,19 +74,35 @@ var buttons = document.getElementById("buttons");
 // get the popups from the html file
 var popups = buttons.getElementsByClassName("popup")
 
-//
+// close any popups
+var close = function(){
+  for(var i = 0; i < popups.length; i++)
+    popups[i].style.display = "none";
+};
+
+// call close when you click on an X
+var Xs = document.getElementsByClassName("close");
+for(var i = 0; i < Xs.length; i++){
+  Xs[i].addEventListener("mouseover", close());
+  console.log(Xs[i]);
+}
+
+// guess button
 var guess = document.createElement("button");
 guess = buttons.appendChild(guess);
 var guessPop = function(){
   popups[0].style.display = "block";
 };
-var guessClose = function(){
-  popups[0].style.display = "none";
-};
 guess.innerHTML = "Guess a Consonant"
 guess.setAttribute("onclick", "javascript:guessPop()");
 
-buttons.innerHTML += "\n"
+
+// background specific to this page
+document.getElementsByTagName("body")[0].style.backgroundImage = "url(http://vignette1.wikia.nocookie.net/gameshows/images/6/61/Wheel_of_Fortune_Puzzle_Board_6.png/revision/latest?cb=20130127193907)"
+document.getElementsByTagName("body")[0].style.backgroundRepeat = "no-repeat"
+document.getElementsByTagName("body")[0].style.backgroundAttachment = "fixed"
+document.getElementsByTagName("body")[0].style.backgroundPosition = "center"
+
 
 console.log(body);
 console.log(body.innerHTML);

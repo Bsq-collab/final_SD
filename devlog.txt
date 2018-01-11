@@ -125,3 +125,6 @@ worked on getting the random letter selection to work for a computer. and also i
 wengC -- 2018-01-11 09:31:59
 JS started - words displayed and buttons started
 
+ibnulJ -- 2018-01-11 18:12:16
+Wrote code for popups later to be integrated with buttons
+

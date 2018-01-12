@@ -98,13 +98,15 @@ $(document).ready(function(){
 });
 
 // guess button brings up popup for guess
-var guess = document.createElement("button");
-guess = buttons.appendChild(guess);
-guess.innerHTML = "Guess a Consonant"
-var guessPop = function(){
+var guessc = document.createElement("button");
+guessc = buttons.appendChild(guessc);
+guessc.innerHTML = "Guess a Consonant"
+var guesscPop = function(){
+  console.log("POPUPS: "+ popups[0]);
   popups[0].style.display = "block";
+
 };
-guess.setAttribute("onclick", "javascript:guessPop()");
+guessc.setAttribute("onclick", "javascript:guesscPop()");
 
 var checkc = function(){
   var char = document.getElementById('C');
@@ -115,6 +117,30 @@ var checkc = function(){
     alert("yay");
     tempc.splice(tempc.indexOf(char.value), 1);
     console.log(tempc);
+  }
+}
+
+
+//==========================VOWEL====
+// guess button brings up popup for guess
+body.innerHTML += "\n"
+var guessv = document.createElement("button");
+guessv = buttons.appendChild(guessv);
+guessv.innerHTML = "Guess a VOWEL"
+var guessvPop = function(){
+  popups[0].style.display = "block";
+};
+guessv.setAttribute("onclick", "javascript:guessvPop()");
+
+var checkv = function(){
+  var char = document.getElementById('V');
+  console.log("|" + char.value + "|");
+  if (tempv.indexOf(char.value) == -1){
+    alert("please choose a VOWEL that hasn't been guessed previously");
+  }else{
+    alert("yay");
+    tempv.splice(tempv.indexOf(char.value), 1);
+    console.log(tempv);
   }
 }
 

@@ -148,3 +148,6 @@ Worked on getting the vowel button to appear and changing the letters upon guess
 
 charlesW -- 2018-01-12 08:48:23
 fixed the updating of letters
+bayanB -- 2018-01-12 13:54:23
+Worked on displaying the solve button, it displays and allows the user to type what they think the solution to the puzzle is. it doesn't check if it's correct yet
+

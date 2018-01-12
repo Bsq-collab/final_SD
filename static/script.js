@@ -170,7 +170,23 @@ var checkv = function(){
   tempv.splice(tempv.indexOf(char.value), 1);
   console.log(tempv);
 }
+//===============================ANSWER======
+// guess button brings up popup for guess
+body.innerHTML += "\n"
+var solve = document.createElement("button");
+solve = buttons.appendChild(solve);
+solve.innerHTML = "solve"
+var guessAPop = function(){
+  popups[2].style.display = "block";
+};
+solve.setAttribute("onclick", "javascript:guessAPop()");
 
+var checkA = function(){
+  var char = document.getElementById('answer');
+  console.log("this is supposed to post");
+  console.log(char);
+  console.log("|" + char.value + "|");
+}
 
 /*
 // background specific to this page

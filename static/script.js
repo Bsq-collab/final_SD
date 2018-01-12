@@ -115,6 +115,15 @@ var checkc = function(){
     alert("please enter a CONSONANT that hasn't been guessed previously");
   }else{
     alert("yay");
+    /*console.log("CLOSED");
+    var letters=document.getElementsByName(char.value);
+    for(var i=0; i<letters.length;i++){
+      console.log("letters.length: "+letters.length);
+      var letter=letters[i];
+      console.log("letter: "+ letter);
+      letter.innerHTML=char.value;
+
+    }*/
     tempc.splice(tempc.indexOf(char.value), 1);
     console.log(tempc);
   }
@@ -139,17 +148,27 @@ var checkv = function(){
     alert("please enter a VOWEL that hasn't been guessed previously");
   }else{
     alert("yay");
+  /*  console.log("CLOSED");
+    var letters=document.getElementsByName(char.value);
+
+    for(var i=0; i<letters.length;i++){
+      console.log("letters.length: "+letters.length);
+      var letter=letters[i];
+      console.log("letter: "+ letter);
+      letter.innerHTML=char.value;
+
+    }*/
     tempv.splice(tempv.indexOf(char.value), 1);
     console.log(tempv);
   }
 }
-
+/*
 // background specific to this page
 document.getElementsByTagName("body")[0].style.backgroundImage = "url(http://vignette1.wikia.nocookie.net/gameshows/images/6/61/Wheel_of_Fortune_Puzzle_Board_6.png/revision/latest?cb=20130127193907)"
 document.getElementsByTagName("body")[0].style.backgroundRepeat = "no-repeat"
 document.getElementsByTagName("body")[0].style.backgroundAttachment = "fixed"
 document.getElementsByTagName("body")[0].style.backgroundPosition = "center"
-
+*/
 
 console.log(body);
 console.log(body.innerHTML);

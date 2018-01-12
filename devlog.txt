@@ -130,3 +130,9 @@ Wrote code for popups later to be integrated with buttons
 wengC -- 2018-01-11 19:40:21
 FORM DOES NOT RELOAD THE PAGEls!
 
+bayanB -- 2018-01-11 18:45:34
+Worked on the CSS, passed the picture hint, added points array
+
+charlesW -- 2018-01-11 18:50:36
+Worked on the javascript to make popups that ask for a consonant. It reloads the page each time which is a problem. 
+

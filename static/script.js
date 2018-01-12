@@ -71,6 +71,8 @@ console.log(chars)
 
 
 
+
+
 // buttons
 var buttons = document.getElementById("buttons");
 
@@ -97,6 +99,25 @@ $(document).ready(function(){
     });
 });
 
+// pass in a char and it will fill it in if there are any
+var fillIn = function(char){
+  var letters=document.getElementsByName(char);
+  console.log("letters.length: "+letters.length);
+  if(letters.length == 0){
+    alert("there are no '" + char + "''");
+  }
+  for(var i=0; i<letters.length;i++){
+    var letter=letters[i];
+    console.log("letter: "+ letter);
+    letter.innerHTML= char;
+  }
+}
+
+
+
+
+
+
 // ===================CONSONANT=========
 // guess button brings up popup for guess
 var guessc = document.createElement("button");
@@ -114,22 +135,18 @@ var checkc = function(){
   if (tempc.indexOf(char.value) == -1){
     alert("please enter a CONSONANT that hasn't been guessed previously");
   }else{
-    alert("yay");
-    /*console.log("CLOSED");
-    var letters=document.getElementsByName(char.value);
-    for(var i=0; i<letters.length;i++){
-      console.log("letters.length: "+letters.length);
-      var letter=letters[i];
-      console.log("letter: "+ letter);
-      letter.innerHTML=char.value;
-
-    }*/
-    tempc.splice(tempc.indexOf(char.value), 1);
-    console.log(tempc);
+    close();
+    fillIn(char.value);
   }
+  tempc.splice(tempc.indexOf(char.value), 1);
+  console.log(tempc);
 }
 
-console.log(popups[1]);
+
+
+
+
+
 //==========================VOWEL====
 // guess button brings up popup for guess
 body.innerHTML += "\n"
@@ -147,21 +164,14 @@ var checkv = function(){
   if (tempv.indexOf(char.value) == -1){
     alert("please enter a VOWEL that hasn't been guessed previously");
   }else{
-    alert("yay");
-  /*  console.log("CLOSED");
-    var letters=document.getElementsByName(char.value);
-
-    for(var i=0; i<letters.length;i++){
-      console.log("letters.length: "+letters.length);
-      var letter=letters[i];
-      console.log("letter: "+ letter);
-      letter.innerHTML=char.value;
-
-    }*/
-    tempv.splice(tempv.indexOf(char.value), 1);
-    console.log(tempv);
+    close();
+    fillIn(char.value);
   }
+  tempv.splice(tempv.indexOf(char.value), 1);
+  console.log(tempv);
 }
+
+
 /*
 // background specific to this page
 document.getElementsByTagName("body")[0].style.backgroundImage = "url(http://vignette1.wikia.nocookie.net/gameshows/images/6/61/Wheel_of_Fortune_Puzzle_Board_6.png/revision/latest?cb=20130127193907)"

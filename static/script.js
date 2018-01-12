@@ -1,3 +1,4 @@
+
 // defined for game
 const cons = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
@@ -114,10 +115,6 @@ var fillIn = function(char){
 }
 
 
-
-
-
-
 // ===================CONSONANT=========
 // guess button brings up popup for guess
 var guessc = document.createElement("button");
@@ -141,10 +138,6 @@ var checkc = function(){
   tempc.splice(tempc.indexOf(char.value), 1);
   console.log(tempc);
 }
-
-
-
-
 
 
 //==========================VOWEL====
@@ -181,11 +174,32 @@ var guessAPop = function(){
 };
 solve.setAttribute("onclick", "javascript:guessAPop()");
 
+var arrToStr=function(array){
+  var ans="";
+  for(var o=0;o<array.length;o+=1){
+    for(var i=0;i<array[o].length;i+=1){
+      console.log("array[o][i]: "+array[o][i]);
+      ans+=array[o][i];
+    }
+    ans+=" ";
+  }
+  console.log(ans);
+  return ans;
+}
 var checkA = function(){
   var char = document.getElementById('answer');
   console.log("this is supposed to post");
   console.log(char);
   console.log("|" + char.value + "|");
+ // console.log(arrToStr(ans[0]));
+  console.log("answer: "+ ans);
+  var a= arrToStr(ans[0])
+  console.log("a: "+ a);
+  if(char.value==a){
+    alert("correct");
+  }
+
+
 }
 
 /*

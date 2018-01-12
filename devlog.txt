@@ -139,3 +139,9 @@ Worked on the javascript to make popups that ask for a consonant. It reloads the
 vivienL -- 2018-01-11 20:46:16
 removes previously guessed consonants from array, throws error if user tries to guess a consonant that was already guessed
 
+bayanB -- 2018-01-12 08:48:07
+Worked on getting the vowel button to appear and changing the letters upon guessing it. uses getElementsByName.
+
+charlesW -- 2018-01-12 08:48:23
+fixed the updating of letters
+

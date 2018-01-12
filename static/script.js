@@ -104,7 +104,7 @@ var fillIn = function(char){
   var letters=document.getElementsByName(char);
   console.log("letters.length: "+letters.length);
   if(letters.length == 0){
-    alert("there are no '" + char + "''");
+    alert("there are no '" + char + "'");
   }
   for(var i=0; i<letters.length;i++){
     var letter=letters[i];

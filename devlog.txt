@@ -40,33 +40,34 @@ tales of wisdom gained...
    \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
     \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
 ==============================================================
-wengC -- 2017-12-19 12:40:48
+charlesW -- 2017-12-19 12:40:48
 delivered team pitch
 
-berriB -- 2017-12-19 12:40:48
+bayanB -- 2017-12-19 12:40:48
 delivered team pitch
 
-jahanI -- 2017-12-19 12:40:48
+ibnulJ -- 2017-12-19 12:40:48
 delivered team pitch
 
-leeV -- 2017-12-19 12:40:48
+vivienL -- 2017-12-19 12:40:48
 delivered team pitch
 
-wengC -- 2017-12-21 13:13:56
+charlesW -- 2017-12-21 13:13:56
 finished design document
 
-berriB -- 2017-12-21 13:13:56
+bayanB -- 2017-12-21 13:13:56
 finished design document
 
-jahanI -- 2017-12-21 13:13:56
+ibnulJ -- 2017-12-21 13:13:56
 finished design document
 
-leeV -- 2017-12-21 13:13:56
+vivienL -- 2017-12-21 13:13:56
 finished design document
+
 bayanB -- 2017-12-21 22:32:07
 Updated How to Play, Description, Site Map, and post MVP ideas
 
-wengC -- 2017-12-23 14:13:23
+charlesW -- 2017-12-23 14:13:23
 Design doc update after 12 hours of sleep :D
 Revised site map and role distribution
 
@@ -91,20 +92,22 @@ Added spin.html which randomly generates a number, displays the puzzle, points a
 bayanB -- 2017-12-27 23:35:12
 Added template for choosing a vowel. It's very similar to spin.html except it requires the user to input a vowel not a consonant.
 
-leeV -- 2018-01-01 20:24:45
+vivienL -- 2018-01-01 20:24:45
 Updated design doc: added data types to database schema -- first devlog update of the new year! :)
-wengC -- 2018-01-02 12:59:07
+
+charlesW -- 2018-01-02 12:59:07
 added getty image api interface
 
 ibnulJ -- 2018-01-02 13:04:27
 Created basic method for getting information from the Jeopardy API
 
-leeV -- 2018-01-01 13:07:32
+vivienL -- 2018-01-01 13:07:32
 Basic integration of flask (app.py routes to some html templates)
+
 bayanB -- 2018-01-02 16:27:18
 worked on the databases. I haven't tested it yet because I need an API key, but it takes the dictionary form api.py and populates a database with hint title and answer
 
-leeV -- 2018-01-03 12:06:03
+vivienL -- 2018-01-03 12:06:03
 cleaned up routes
 
 ibnulJ -- 2018-01-03 13:14:21
@@ -113,28 +116,29 @@ fixed jeopardy api function to filter out hazardous characters
 bayanB -- 2018-01-03 22:24:12
 the first 3 columns of the database is working fine, the images link api part is not working as of right now.
 
-wengC berriB -- 2018-01-05 13:14:44
+charlesW bayanB -- 2018-01-05 13:14:44
 fixed api keys and fixed database
 
-wengC -- 2018-01-08 12:59:41
+charlesW -- 2018-01-08 12:59:41
 cleaned up files to use JS rather than routes to process the game
 
 bayanB -- 2018-01-10 19:59:08
 worked on getting the random letter selection to work for a computer. and also included a function called make blanks that creates a blank for each character
 
-wengC -- 2018-01-11 09:31:59
+charlesW -- 2018-01-11 09:31:59
 JS started - words displayed and buttons started
 
 ibnulJ -- 2018-01-11 18:12:16
 Wrote code for popups later to be integrated with buttons
-wengC -- 2018-01-11 19:40:21
+
+charlesW -- 2018-01-11 19:40:21
 FORM DOES NOT RELOAD THE PAGEls!
 
 bayanB -- 2018-01-11 18:45:34
 Worked on the CSS, passed the picture hint, added points array
 
 charlesW -- 2018-01-11 18:50:36
-Worked on the javascript to make popups that ask for a consonant. It reloads the page each time which is a problem. 
+Worked on the javascript to make popups that ask for a consonant. It reloads the page each time which is a problem.
 
 vivienL -- 2018-01-11 20:46:16
 removes previously guessed consonants from array, throws error if user tries to guess a consonant that was already guessed
@@ -144,4 +148,3 @@ Worked on getting the vowel button to appear and changing the letters upon guess
 
 charlesW -- 2018-01-12 08:48:23
 fixed the updating of letters
-

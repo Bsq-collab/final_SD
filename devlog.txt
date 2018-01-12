@@ -127,4 +127,6 @@ JS started - words displayed and buttons started
 
 ibnulJ -- 2018-01-11 18:12:16
 Wrote code for popups later to be integrated with buttons
+wengC -- 2018-01-11 19:40:21
+FORM DOES NOT RELOAD THE PAGEls!
 

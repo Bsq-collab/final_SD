@@ -92,7 +92,7 @@ for(var i = 0; i < Xs.length; i++){
 
 // stop submiting of forms
 $(document).ready(function(){
-    $("form").click(function(event){
+    $("form").submit(function(event){
         event.preventDefault();
     });
 });
@@ -108,14 +108,13 @@ guess.setAttribute("onclick", "javascript:guessPop()");
 
 var checkc = function(){
   var char = document.getElementById('C');
-  console.log("|" + char.innerHTML + "|");
-  if (tempc.indexOf(char.innerHTML) == -1){
+  console.log("|" + char.value + "|");
+  if (tempc.indexOf(char.value) == -1){
     alert("please choose a consonant");
   }else{
     alert("yay");
   }
 }
-document.getElementById("consonant").addEventListener("submit", checkc);
 
 // background specific to this page
 document.getElementsByTagName("body")[0].style.backgroundImage = "url(http://vignette1.wikia.nocookie.net/gameshows/images/6/61/Wheel_of_Fortune_Puzzle_Board_6.png/revision/latest?cb=20130127193907)"

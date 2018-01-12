@@ -136,3 +136,6 @@ Worked on the CSS, passed the picture hint, added points array
 charlesW -- 2018-01-11 18:50:36
 Worked on the javascript to make popups that ask for a consonant. It reloads the page each time which is a problem. 
 
+vivienL -- 2018-01-11 20:46:16
+removes previously guessed consonants from array, throws error if user tries to guess a consonant that was already guessed
+

@@ -110,9 +110,11 @@ var checkc = function(){
   var char = document.getElementById('C');
   console.log("|" + char.value + "|");
   if (tempc.indexOf(char.value) == -1){
-    alert("please choose a consonant");
+    alert("please choose a consonant that hasn't been guessed previously");
   }else{
     alert("yay");
+    tempc.splice(tempc.indexOf(char.value), 1);
+    console.log(tempc);
   }
 }
 

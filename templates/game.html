@@ -34,36 +34,40 @@
     </div>
   </div>
 
+
   <div id="solve" class="popup">
     <div class="words">
       <span class="close">&times;</span>
-      <p>Your guess:</p>
+      <p>Your Guess:</p>
       <form onsubmit="return checkA()">
       	<input type="text" id="answer"></input>
       </form>
     </div>
   </div>
 
-  <div id="guessVowel" class="popup">
+
+
+  <div id="hq" class="popup">
     <div class="words">
       <span class="close">&times;</span>
-      <p>Enter a vowel as your guess:</p>
-      <form class="" action="index.html" method="post" onsubmit="check()">
-        <input type="text" maxlength="1" name="V"></input>
+      <p>Buy Question:</p>
+      <form onsubmit="return showQ()">
+      	<input type="text" id="answer"></input>
+      </form>
+    </div>
+  </div>
+
+  <div id="hp" class="popup">
+    <div class="words">
+      <span class="close">&times;</span>
+      <p>Buy Picture:</p>
+      <form onsubmit="return showP()">
+      	<input type="text" id="answer"></input>
       </form>
     </div>
   </div>
 
 
-  <div id="hints" class="popup">
-    <div class="words">
-      <span class="close">&times;</span>
-      <p>Buy a hint?</p>
-      <form class="" action="index.html" method="post" onsubmit="check()">
-        <input type="submit" name="H" value="Yes"></input>
-      </form>
-    </div>
-  </div>
 
 {% endblock %}
 

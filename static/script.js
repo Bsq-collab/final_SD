@@ -114,7 +114,6 @@ var fillIn = function(char){
   }
 }
 
-
 // ===================CONSONANT=========
 // guess button brings up popup for guess
 var guessc = document.createElement("button");
@@ -199,12 +198,54 @@ var checkA = function(){
   if(char.value+" "==a){
     alert("CORRECT");
   }
-  else if(char.value!=a){
-    alert("INCORRECT");
-  }
-
-
+ // else if(char.value!=a){
+ //alert("INCORRECT!");
+  //}
 }
+
+//===============================Question Hint==========
+body.innerHTML += "\n"
+var hq = document.createElement("button");
+hq = buttons.appendChild(hq);
+hq.innerHTML = "Buy Question"
+
+var buyQ = function(){
+  popups[3].style.display = "block";
+};
+hq.setAttribute("onclick", "javascript:buyQ()");
+
+
+var showQ = function(){
+  document.body.appendChild(hint);
+  close();
+}
+
+//===============================Question Hint==========
+body.innerHTML += "\n"
+var hp = document.createElement("button");
+hp = buttons.appendChild(hp);
+hp.innerHTML = "Buy Picture"
+
+var buyP = function(){
+  popups[4].style.display = "block";
+};
+hp.setAttribute("onclick", "javascript:buyP()");
+
+
+var showP = function(){
+  var pi="<img src='"+p+"'/>"
+  console.log("pic: "+pic);
+  console.log("p: "+p);
+  console.log("pi: "+pi);
+
+  document.body.appendChild(pi);
+  close();
+  //close();
+}
+
+
+
+
 
 /*
 // background specific to this page

@@ -178,7 +178,7 @@ var arrToStr=function(array){
   var ans="";
   for(var o=0;o<array.length;o+=1){
     for(var i=0;i<array[o].length;i+=1){
-      console.log("array[o][i]: "+array[o][i]);
+      //console.log("array[o][i]: "+array[o][i]);
       ans+=array[o][i];
     }
     ans+=" ";
@@ -193,10 +193,14 @@ var checkA = function(){
   console.log("|" + char.value + "|");
  // console.log(arrToStr(ans[0]));
   console.log("answer: "+ ans);
-  var a= arrToStr(ans[0])
-  console.log("a: "+ a);
-  if(char.value==a){
-    alert("correct");
+  var a= arrToStr(ans);
+  console.log("a:_"+ a+"_");
+  console.log("a==char.value: "+ a==char.value);
+  if(char.value+" "==a){
+    alert("CORRECT");
+  }
+  else if(char.value!=a){
+    alert("INCORRECT");
   }
 
 

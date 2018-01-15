@@ -151,3 +151,6 @@ fixed the updating of letters
 bayanB -- 2018-01-12 13:54:23
 Worked on displaying the solve button, it displays and allows the user to type what they think the solution to the puzzle is. it doesn't check if it's correct yet
 
+bayanB -- 2018-01-14 20:45:09
+the correct/incorrect alerts come up after user guesses the answer. so trying to solve actually works. but no points system has been implemented yet
+

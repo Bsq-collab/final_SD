@@ -234,13 +234,13 @@ hp.setAttribute("onclick", "javascript:buyP()");
 
 var showP = function(){
   var pi="<img src='"+p+"'/>"
-  console.log("pic: "+pic);
-  console.log("p: "+p);
   console.log("pi: "+pi);
-
-  document.body.appendChild(pi);
+  var im=document.createElement("img");
+  im.setAttribute('src',p);
+  im.setAttribute('height','100px');
+  im.setAttribute('width','100px');
+  document.body.appendChild(im);
   close();
-  //close();
 }
 
 

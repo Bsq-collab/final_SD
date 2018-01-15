@@ -157,3 +157,6 @@ the correct/incorrect alerts come up after user guesses the answer. so trying to
 bayanB -- 2018-01-15 10:27:30
 Displaying the question now works but the picture still requires some debugging
 
+bayanB -- 2018-01-15 10:36:01
+fixed image only problem is that it displayays more than once if u hit enter more than once. 
+

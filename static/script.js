@@ -126,16 +126,19 @@ var guesscPop = function(){
 guessc.setAttribute("onclick", "javascript:guesscPop()");
 
 var checkc = function(){
-  var char = document.getElementById('C');
-  console.log("|" + char.value + "|");
-  if (tempc.indexOf(char.value) == -1){
-    alert("please enter a CONSONANT that hasn't been guessed previously");
-  }else{
-    close();
-    fillIn(char.value);
-  }
-  tempc.splice(tempc.indexOf(char.value), 1);
-  console.log(tempc);
+    var char = document.getElementById('C');
+    console.log("|" + char.value + "|");
+    if (tempc.indexOf(char.value) == -1){
+	alert("please enter a CONSONANT that hasn't been guessed previously");
+    }else{
+	close();
+	fillIn(char.value);
+    }
+    tempc.splice(tempc.indexOf(char.value), 1);
+    console.log(tempc);
+    if (tempc.length == 0) {
+	guessc.disabled= true;
+    }
 }
 
 
@@ -151,16 +154,19 @@ var guessvPop = function(){
 guessv.setAttribute("onclick", "javascript:guessvPop()");
 
 var checkv = function(){
-  var char = document.getElementById('V');
-  console.log("|" + char.value + "|");
-  if (tempv.indexOf(char.value) == -1){
-    alert("please enter a VOWEL that hasn't been guessed previously");
-  }else{
-    close();
-    fillIn(char.value);
-  }
-  tempv.splice(tempv.indexOf(char.value), 1);
-  console.log(tempv);
+    var char = document.getElementById('V');
+    console.log("|" + char.value + "|");
+    if (tempv.indexOf(char.value) == -1){
+	alert("please enter a VOWEL that hasn't been guessed previously");
+    }else{
+	close();
+	fillIn(char.value);
+    }
+    tempv.splice(tempv.indexOf(char.value), 1);
+    console.log(tempv);
+    if (tempv.length == 0) {
+	guessv.disabled= true;
+    }
 }
 //===============================ANSWER======
 // guess button brings up popup for guess
@@ -210,7 +216,8 @@ hq = buttons.appendChild(hq);
 hq.innerHTML = "Buy Question"
 
 var buyQ = function(){
-  popups[3].style.display = "block";
+    popups[3].style.display = "block";
+    hq.disabled = true;
 };
 hq.setAttribute("onclick", "javascript:buyQ()");
 
@@ -227,7 +234,8 @@ hp = buttons.appendChild(hp);
 hp.innerHTML = "Buy Picture"
 
 var buyP = function(){
-  popups[4].style.display = "block";
+    popups[4].style.display = "block";
+    hp.disabled = true;
 };
 hp.setAttribute("onclick", "javascript:buyP()");
 

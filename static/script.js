@@ -217,17 +217,31 @@ hq.innerHTML = "Buy Question"
 
 var buyQ = function(){
     popups[3].style.display = "block";
-    hq.disabled = true;
 };
+
 hq.setAttribute("onclick", "javascript:buyQ()");
 
 
-var showQ = function(){
-  document.body.appendChild(hint);
-  close();
+var showQ = function(ans){
+    if (ans == "no") {
+	close();
+	return;
+    }
+    //document.body.innerHTML += "<br><br>";
+    //newLine();
+    //newLine();
+    //openCenter();
+    hint.innerHTML = "<br><br>" + hint.innerHTML;
+    hint.style.textAlign = "center";
+    hint.style.color = "blue";
+    hint.style.backgroundColor = "red";
+    document.body.appendChild(hint);
+    hq.disabled = true;
+    //closeCenter();
+    close();
 }
 
-//===============================Question Hint==========
+//===============================Picture Hint==========
 body.innerHTML += "\n"
 var hp = document.createElement("button");
 hp = buttons.appendChild(hp);
@@ -235,19 +249,23 @@ hp.innerHTML = "Buy Picture"
 
 var buyP = function(){
     popups[4].style.display = "block";
-    hp.disabled = true;
 };
 hp.setAttribute("onclick", "javascript:buyP()");
 
 
-var showP = function(){
-  var pi="<img src='"+p+"'/>"
-  console.log("pi: "+pi);
-  var im=document.createElement("img");
-  im.setAttribute('src',p);
-  im.setAttribute('height','100px');
-  im.setAttribute('width','100px');
-  document.body.appendChild(im);
+var showP = function(ans){
+    if (ans == "no") {
+	close();
+	return;
+    }
+    var pi="<img src='"+p+"'/>"
+    console.log("pi: "+pi);
+    var im=document.createElement("img");
+    im.setAttribute('src',p);
+    im.setAttribute('height','100px');
+    im.setAttribute('width','100px');
+    document.body.appendChild(im);
+    hp.disabled = true;
   close();
 }
 
@@ -267,3 +285,23 @@ console.log(body);
 console.log(body.innerHTML);
 console.log(buttons);
 console.log(buttons.innerHTML);
+
+
+
+/*----------------------------HELPER FUNCTIONS FOR AESTHETICS-------------*/
+
+var openCenter = function() {
+    return document.body.innerHTML += "<center>";
+}
+var closeCenter = function() {
+    return document.body.innerHTML += "</center>";
+}
+var newLine = function() {
+    return document.body.innerHTML += "<br>";
+}
+var openItalics = function() {
+    return document.body.innerHTML += "<i>";
+}
+var closeItalics = function() {
+    return document.body.innerHTML += "</i>";
+}

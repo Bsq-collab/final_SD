@@ -163,3 +163,6 @@ fixed image only problem is that it displayays more than once if u hit enter mor
 ibnulJ -- 2018-01-16 17:56:21
 Made it so buttons cannot be used past what they were built for. For example, you cannot buy the same hint twice and you cannot buy vowels if all 5 are guessed already
 
+ibnulJ -- 2018-01-16 20:07:46
+Updated ReadMe. Fixed buttons so that there is a no option, allowing users to cancel buying a hint if they're in the process of buying one. This also works with the button disabling
+

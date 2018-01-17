@@ -51,8 +51,9 @@
     <div class="words">
       <span class="close">&times;</span>
       <p>Are you sure you'd like to buy the question hint?</p>
-      <form onsubmit="return showQ()">
-      	<input type="text" id="answer"></input>
+      <form onsubmit="return showQ('yes')">
+      	<input type="submit" value="Yes" id="answer"></input>
+	<input type="button" value="No" id="answer" onclick="showQ('no')">
       </form>
     </div>
   </div>
@@ -61,8 +62,9 @@
     <div class="words">
       <span class="close">&times;</span>
       <p>Are you sure you'd like to buy the picture hint?</p>
-      <form onsubmit="return showP()">
-      	<input type="text" id="answer"></input>
+      <form onsubmit="return showP('yes')">
+      	<input type="submit" value="Yes" id="answer"></input>
+	<input type="button" value="No" id="answer" onclick="showP('no')">
       </form>
     </div>
   </div>

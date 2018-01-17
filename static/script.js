@@ -236,10 +236,10 @@ var showQ = function(ans){
     //newLine();
     //newLine();
     //openCenter();
-    hint.innerHTML = "<br><br>" + hint.innerHTML;
+    //hint.innerHTML = "<br><br>" + hint.innerHTML;
     hint.style.textAlign = "center";
-    hint.style.color = "blue";
-    hint.style.backgroundColor = "red";
+    hint.style.color = "white";
+    hint.style.backgroundColor = "rgba(255,0,0,0.4)";
     document.body.appendChild(hint);
     hq.disabled = true;
     //closeCenter();
@@ -269,6 +269,7 @@ var showP = function(ans){
     im.setAttribute('src',p);
     im.setAttribute('height','100px');
     im.setAttribute('width','100px');
+    im.setAttribute('style', "display: block; margin: 0 auto;");
     document.body.appendChild(im);
     hp.disabled = true;
   close();

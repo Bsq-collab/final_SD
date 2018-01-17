@@ -26,9 +26,8 @@
 }
 
 .char {
-  padding: 2px;
-  background-color: white;
-  color: black;
+  padding: 4px;
+  color: white;
 }
 
 .popup {
@@ -71,6 +70,20 @@
   border-radius: 10px;
   background: white;
 }
+
+#gamebody {
+  background-image: url(http://static-18.sinclairstoryline.com/resources/media/59283c44-c6ff-4c31-b2f5-1cf3967d9e8b-wheeloffortuneseattle2.jpg);
+  background-size: cover;
+  background-position: center top;
+}
+
+.category {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+
 /* .center{
     background-image: url("http://vignette1.wikia.nocookie.net/gameshows/images/6/61/Wheel_of_Fortune_Puzzle_Board_6.png/revision/latest?cb=20130127193907");
     background-repeat: no-repeat;

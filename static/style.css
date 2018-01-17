@@ -61,7 +61,8 @@
 }
 
 #homebody {
-  background-image: url(http://ghk.h-cdn.co/assets/16/05/980x490/landscape-1454543257-wheel.jpg);
+  /*background-image: url(http://ghk.h-cdn.co/assets/16/05/980x490/landscape-1454543257-wheel.jpg);*/
+  background-image: url(https://s3.amazonaws.com/images.charitybuzz.com/images/124115/original.jpg?1393966235);
   background-size: cover;
   color: white;
 }

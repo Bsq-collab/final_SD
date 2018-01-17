@@ -267,8 +267,8 @@ var showP = function(ans){
     console.log("pi: "+pi);
     var im=document.createElement("img");
     im.setAttribute('src',p);
-    im.setAttribute('height','100px');
-    im.setAttribute('width','100px');
+    im.setAttribute('height','200px');
+    im.setAttribute('width','200px');
     im.setAttribute('style', "display: block; margin: 0 auto;");
     document.body.appendChild(im);
     hp.disabled = true;

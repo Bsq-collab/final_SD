@@ -175,3 +175,6 @@ added winning screen at end of game when player correctly guesses the answer
 vivienL -- 2018-01-16 22:09:37
 made hint and picture css look prettier
 
+vivienL -- 2018-01-17 11:49:13
+images saved locally instead of url
+

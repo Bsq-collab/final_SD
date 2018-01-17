@@ -166,3 +166,6 @@ Made it so buttons cannot be used past what they were built for. For example, yo
 ibnulJ -- 2018-01-16 20:07:46
 Updated ReadMe. Fixed buttons so that there is a no option, allowing users to cancel buying a hint if they're in the process of buying one. This also works with the button disabling
 
+vivienL -- 2018-01-16 21:33:43
+overhaul of homepage and gamepage css -- added backgrounds, made buttons look cleaner, and other stylistic changes
+

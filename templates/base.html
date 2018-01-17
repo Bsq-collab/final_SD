@@ -18,7 +18,9 @@
     <script src="/static/jquery-3.1.1.min.js"></script>
   </head>
 
-  <body class="center">
+  {% if self._TemplateReference__context.name == "home.html" %}
+
+  <body class="center" id="homebody">
     <nav class="navbar fixed-top navbar-dark bg-dark">
       <a class="navbar-brand" href="/">
         WHEEL OF FORTUNE
@@ -27,19 +29,80 @@
     <br><br><br>
 
     <div class="notNav" id="bodyy">
-      {% block body %}
+      {% block body1 %}
 
-      {% endblock body %}
+      {% endblock body1 %}
     </div>
 
     <div class="notNav" id="buttons">
-      {% block buttons %}
+      {% block buttons1 %}
 
       {% endblock %}
     </div>
 
-    {% block footer %}
+    {% block footer1 %}
 
-    {% endblock footer %}
+    {% endblock footer1 %}
   </body>
+  {% else %}
+
+    {% if self._TemplateReference__context.name == "game.html" %}
+
+    <body class="center" id="gamebody">
+      <nav class="navbar fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">
+          WHEEL OF FORTUNE
+        </a>
+      </nav>
+      <br><br><br>
+
+      <div class="notNav" id="bodyy">
+        {% block bodyg %}
+
+        {% endblock bodyg %}
+      </div>
+
+      <div class="notNav" id="buttons">
+        {% block buttonsg %}
+
+        {% endblock %}
+      </div>
+
+      {% block footerg %}
+
+      {% endblock %}
+    </body>
+
+    {% else %}
+
+    <body class="center">
+      <nav class="navbar fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">
+          WHEEL OF FORTUNE
+        </a>
+      </nav>
+      <br><br><br>
+
+      <div class="notNav" id="bodyy">
+        {% block body %}
+
+        {% endblock body %}
+      </div>
+
+      <div class="notNav" id="buttons">
+        {% block buttons %}
+
+        {% endblock %}
+      </div>
+
+      {% block footer %}
+
+      {% endblock footer %}
+    </body>
+
+    {% endif %}
+
+  {% endif %}
+
+
 </html>

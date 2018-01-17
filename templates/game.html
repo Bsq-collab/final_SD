@@ -5,7 +5,7 @@
 {% endblock %}
 
 
-{% block body %}
+{% block bodyg %}
   <p id="answer">{{round["answer"]}}</p>
   <p id="title">{{round["title"]}}</p>
   <p id="hint">{{round["hint"]}}</p>
@@ -13,7 +13,7 @@
   {% endblock %}
 
 
-{% block buttons %}
+{% block buttonsg %}
   <div id="guess" class="popup">
     <div class="words">
       <span class="close">&times;</span>
@@ -74,7 +74,7 @@
 {% endblock %}
 
 
-{% block footer %}
+{% block footerg %}
 <nav class="navbar fixed-bottom navbar-light bg-light">
   <ul id="scores" class="nav navbar-nav bd-navbar-nav flex-row">
     player 1:<li id="p1" class="nav-item">{{points[0]}}</li>

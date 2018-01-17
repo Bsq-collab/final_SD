@@ -203,7 +203,12 @@ var checkA = function(){
   console.log("a==char.value: "+ a==char.value);
   if(char.value+" "==a){
     alert("CORRECT");
-  }
+    document.body.innerHTML = "";
+    var cgts = document.createElement("h1");
+    cgts.innerHTML = "CONGRATULATIONS!" + "<br>" + "YOU GUESSED CORRECTLY!";
+    cgts.setAttribute('style', "color: white; font-size: 100px; text-align: center;");
+    document.body.appendChild(cgts);
+}
  // else if(char.value!=a){
  //alert("INCORRECT!");
   //}

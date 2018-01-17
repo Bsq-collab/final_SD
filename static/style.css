@@ -59,6 +59,11 @@
     font-size: 28px;
     font-weight: bold;
 }
+
+#homebody {
+  background-image: url(http://ghk.h-cdn.co/assets/16/05/980x490/landscape-1454543257-wheel.jpg);
+  background-size: cover;
+}
 /* .center{
     background-image: url("http://vignette1.wikia.nocookie.net/gameshows/images/6/61/Wheel_of_Fortune_Puzzle_Board_6.png/revision/latest?cb=20130127193907");
     background-repeat: no-repeat;

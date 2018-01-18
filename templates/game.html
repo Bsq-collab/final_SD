@@ -77,9 +77,9 @@
 {% block footerg %}
 <nav class="navbar fixed-bottom navbar-light bg-light">
   <ul id="scores" class="nav navbar-nav bd-navbar-nav flex-row">
-    player 1:<li id="p1" class="nav-item">{{points[0]}}</li>
-    player 2:<li id="p2" class="nav-item">{{points[1]}}</li>
-    player 3:<li id="p3" class="nav-item">{{points[2]}}</li>
+    {% for player in players %}
+    {{player}}:<li id="p1" class="nav-item">{{player_dict[player]}}</li>
+    {% endfor %}
   </ul>
 </nav>
 <script src="/static/script.js"></script>

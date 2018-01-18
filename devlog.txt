@@ -181,3 +181,6 @@ images saved locally instead of url, made game page text background more opaque
 ibnulJ -- 2018-01-17 20:43:47
 Expanded form to include more players, no longer maximizing players at 3. Created a system to store the different players and their scores
 
+ibnulJ -- 2018-01-18 12:29:42
+fixed error caused by unclosed comment
+

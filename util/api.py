@@ -4,19 +4,22 @@ import urllib2
 import json
 
 def jeopardy():
+    round_dict = {}
     try:
         global jeopardy_url
         uread = urllib2.urlopen(jeopardy_url).read()
         udict = json.loads(uread)[0]
-        round_dict = {}
+        #round_dict = {}
         round_dict['hint'] = fix_answer(udict['question'])
         round_dict['title'] = fix_answer(udict['category']['title'])
         round_dict['answer'] = fix_answer(udict['answer'])
         return round_dict
     except:
         print "Error: API key was set up incorrectly! jeopardy"
-        d = {'hint': "oops"}
-        return d
+        round_dict['hint'] = "hint"
+        round_dict['title'] = "title"
+        round_dict['answer'] = "answer"
+        return round_dict
 
 
 def fix_answer(thing):

@@ -316,3 +316,4 @@ var closeItalics = function() {
 /*NOTES
 for when trying to check which players are computers/users
 "String".find("other") looks for a string in another one, and returns -1 if not found
+*/

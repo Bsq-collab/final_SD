@@ -184,3 +184,6 @@ Expanded form to include more players, no longer maximizing players at 3. Create
 ibnulJ -- 2018-01-18 12:29:42
 fixed error caused by unclosed comment
 
+vivienL -- 2018-01-18 12:07:25
+added directions button to navbar
+

@@ -187,3 +187,6 @@ fixed error caused by unclosed comment
 vivienL -- 2018-01-18 12:07:25
 added directions button to navbar
 
+ibnulJ -- 2018-01-18 13:16:42
+invisifed the answer, hint, and title because they used to display before javascript
+

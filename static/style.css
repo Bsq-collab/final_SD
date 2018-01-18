@@ -7,7 +7,18 @@
   padding-left: 2px;
   padding-right: 6px;
 }
-
+#answer{
+    display: none;
+}
+#title{
+    display: none;
+}
+#hint{
+    display: none;
+}
+#pic{
+    display: none;
+}
 .inlineList {
   display: flex;
   flex-direction: row;

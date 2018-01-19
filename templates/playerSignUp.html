@@ -4,15 +4,19 @@
 - Player Sign Up
 {% endblock %}
 
-{% block body %}
-<h2>Sign Up</h2>
-<br>
+{% block body2 %}
 
+<br>
+<br>
+<br>
+<br>
+<div style="width:20%;text-align:center;">
+  <h2>Sign Up</h2>
 <p>
   Before we can start playing, how many contestants will be playing (max 3). If you have less than 3 you will play against a computer. For example if there are 2 players we will provide 1 computer player.
 </p>
 <br>
-<div class="mx-auto" style="width: 390px;">
+<div class="mx-auto" style="width: 90%;">
   <form action="/game" method="post" id="options">
     <div class="form-group">
       <label for="Number"> How Many Non-Computer Players?</label>
@@ -31,5 +35,6 @@
       </button>
     </center>
   </form>
+</div>
 </div>
 {% endblock %}

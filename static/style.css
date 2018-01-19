@@ -76,6 +76,18 @@
   background: white;
 }
 
+#signbody {
+  /*background-image: url(http://ghk.h-cdn.co/assets/16/05/980x490/landscape-1454543257-wheel.jpg);*/
+  background-image: url('img/home.jpg');
+  background-size: cover;
+  color: white;
+}
+
+#signbody .notNav a {
+  border-radius: 10px;
+  background: white;
+}
+
 #gamebody {
   background-image: url('img/game.jpg');
   background-size: cover;

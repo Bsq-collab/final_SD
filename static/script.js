@@ -66,11 +66,13 @@ for (var i = 0; i < ans.length; i++){
 }
 
 // grab info for different players
+/*
 var scores = []
 score.append(document.getElementById('0'));
 score.append(document.getElementById('1'));
 score.append(document.getElementById('2'));
 console.log(scores);
+*/
 
 var chars = category.getElementsByTagName("li");
 category = body.appendChild(category);

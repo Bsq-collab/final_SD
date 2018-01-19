@@ -78,7 +78,7 @@
 <nav class="navbar fixed-bottom navbar-light bg-light">
   <ul id="scores" class="nav navbar-nav bd-navbar-nav flex-row">
     {% for player in players %}
-    {{player}}:<li id="p1" class="nav-item">{{player_dict[player]}}</li>
+    {{player}}:<li id="{{players.index(player)}}" class="nav-item">{{player_dict[player]}}</li>
     {% endfor %}
   </ul>
 </nav>

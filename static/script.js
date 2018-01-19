@@ -316,4 +316,25 @@ var closeItalics = function() {
 /*NOTES
 for when trying to check which players are computers/users
 "String".find("other") looks for a string in another one, and returns -1 if not found
+
+
+things that will be needed
 */
+
+
+var noncpu; //number of noncpu players
+var current_turn; //will be the id
+var multiplier; //spin of the wheel
+var player_dict; //dict of players and their points <- needed because then we'd have to grab that value way too often
+
+//everytime anyone gets a c right, give them the multiplier in points
+//everytime guesses a vowel, lose 100
+//solves questions gets 3000, but also wins so whatev
+//word hint costs 1000
+//picture hints costs 500
+
+var cpuTurn = function(id):
+    //guesses letter
+    //if have enough money
+    //   guess random index vowel from tempv
+    

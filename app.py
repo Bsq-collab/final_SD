@@ -29,9 +29,9 @@ def game():
     if request.method == "POST":
         global noncpu
         noncpu = int(request.form.get('noncpu'))
-        global cpu
-        cpu = int(request.form.get('cpu'))
-        setup_players(noncpu, cpu)
+        #global cpu
+        #cpu = int(request.form.get('cpu'))
+        setup_players(noncpu) #, cpu)
     dictionary = api.jeopardy()
     dictionary['pic']= images.image(dictionary['answer'])
     #pts=[0,0,0]
@@ -51,20 +51,20 @@ def random_letter(letters):
     return letters.pop(x)
 
 #this initializes the game with blank values for computer players and money
-def setup_players(noncpu, cpu):
+def setup_players(noncpu): #, cpu):
     # key is player, item is the money
     global players
     players = {}
-    players["You"] = 0
+    #players["You"] = 0
     global players_ordered
     players_ordered = []
-    players_ordered.append("You")
+    #players_ordered.append("You")
     for i in xrange(noncpu):
         # i is numbers from 0 to num-1
         #players["User " + str(i + 1)] = 0
         players_ordered.append("User " + str(i + 1))
         players[players_ordered[-1]] = 0
-    for i in xrange(cpu):
+    for i in xrange(3-noncpu):
         # i is numbers from 0 to num-1
         #players["CPU " + str(i + 1)] = 0
         players_ordered.append("CPU " + str(i + 1))

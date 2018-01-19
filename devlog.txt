@@ -190,3 +190,6 @@ added directions button to navbar
 ibnulJ -- 2018-01-18 13:16:42
 invisifed the answer, hint, and title because they used to display before javascript
 
+ibnulJ -- 2018-01-19 11:33:39
+Removed second form to bring it back down in the amount of players. Made it so computer players are made to bring total players up to 3. Still need to make a turn based system work.
+

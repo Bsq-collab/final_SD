@@ -65,6 +65,13 @@ for (var i = 0; i < ans.length; i++){
   category.innerHTML += "\n"
 }
 
+// grab info for different players
+var scores = []
+score.append(document.getElementById('0'));
+score.append(document.getElementById('1'));
+score.append(document.getElementById('2'));
+console.log(scores);
+
 var chars = category.getElementsByTagName("li");
 category = body.appendChild(category);
 body.innerHTML += "\n"
@@ -333,7 +340,7 @@ var player_dict; //dict of players and their points <- needed because then we'd 
 //word hint costs 1000
 //picture hints costs 500
 
-var cpuTurn = function(id):
+//var cpuTurn = function(id)
     //guesses letter
     //if have enough money
     //   guess random index vowel from tempv

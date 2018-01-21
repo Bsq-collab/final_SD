@@ -139,6 +139,7 @@ var checkc = function(){
     console.log("|" + char.value + "|");
     if (tempc.indexOf(char.value) == -1){
 	alert("please enter a CONSONANT that hasn't been guessed previously");
+	return;
     }else{
 	close();
 	fillIn(char.value);
@@ -148,6 +149,10 @@ var checkc = function(){
     if (tempc.length == 0) {
 	guessc.disabled= true;
     }
+    console.log(currentTurn);
+    nextTurn();
+    console.log(currentTurn);
+    runThroughTurns();
 }
 
 
@@ -246,10 +251,16 @@ var showQ = function(ans){
     //newLine();
     //openCenter();
     //hint.innerHTML = "<br><br>" + hint.innerHTML;
-    hint.style.textAlign = "center";
-    hint.style.color = "white";
-    hint.style.backgroundColor = "rgba(255,0,0,0.4)";
-    document.body.appendChild(hint);
+    var display_hint = document.createElement("P");
+    display_hint.innerHTML = hint.innerHTML;
+    //hint.style.textAlign = "center";
+    //hint.style.color = "white";
+    //hint.style.backgroundColor = "rgba(255,0,0,0.4)";
+    //document.body.appendChild(hint);
+    display_hint.style.textAlign = "center";
+    display_hint.style.color = "white";
+    display_hint.style.backgroundColor = "rgba(255,0,0,0.4)";
+    document.body.appendChild(display_hint);
     hq.disabled = true;
     //closeCenter();
     close();
@@ -281,7 +292,7 @@ var showP = function(ans){
     im.setAttribute('style', "display: block; margin: 0 auto;");
     document.body.appendChild(im);
     hp.disabled = true;
-  close();
+    close();
 }
 
 
@@ -330,10 +341,93 @@ for when trying to check which players are computers/users
 things that will be needed
 */
 
+
+var findNoncpu = function() {
+    if (document.getElementById('2 name').innerHTML.includes('CPU')) {
+	//last person is not a cpu
+	if (document.getElementById('1 name').innerHTML.includes('CPU')) {
+	    return 1;
+	} else {
+	    //console.log(document.getElementById('1 name').innerHTML.includes('CPU'));
+	    return 2;
+	}
+    } else {
+	return 3;
+    }
+}
+var noncpu = findNoncpu(); //number of noncpu players
+//console.log(noncpu);
+
+var currentTurn = "0"; //will be the id
+//increments turn
+var nextTurn = function() {
+    currentTurn = ((parseInt(currentTurn) + 1)%3).toString();
+}
+//nextTurn();
+//console.log(currentTurn);
+
+var spinWheel = function(){
+    multiplier = Math.ceil(Math.random()*10)*100;
+}
+var multiplier = Math.ceil(Math.random()*10)*100;
+//spinWheel();
+//console.log(multiplier);
+
+// returns a random eligible consonant
+var randomConsonant = function() {
+    return tempc[Math.floor(Math.random()*tempc.length)];
+}
+
+var guessRandomConsonant = function(){
+    char = randomConsonant();
+    //console.log(char);
+    console.log("|" + char + "|");
+    tempc.splice(tempc.indexOf(char), 1);
+    console.log(tempc);
+    CPUfillIn(char);
+    if (tempc.length == 0) {
+	guessc.disabled= true;
+    }
+    nextTurn();
+    runThroughTurns();
+}
+
+// CPU guessing helper function
+var CPUfillIn = function(char){
+    var letters=document.getElementsByName(char);
+    console.log("letters.length: "+letters.length);
+    if(letters.length == 0){
+	alert("CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "', but there are none");
+	return;
+    }
+    for(var i=0; i<letters.length;i++){
+	var letter=letters[i];
+	console.log("letter: "+ letter);
+	letter.innerHTML= char;
+    }
+    alert("CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "'");
+}
+
+var runThroughTurns = function(){
+    if (parseInt(currentTurn) < noncpu) {
+	console.log("current turn: " + currentTurn);
+	console.log("users turn");
+	return;
+    } else {
+	console.log("cpus turn");
+	guessRandomConsonant()
+	//nextTurn();
+    }
+}
 /*
-//var noncpu; //number of noncpu players
-//var current_turn; //will be the id
-//var multiplier; //spin of the wheel
+while (true) {
+    //setTimeout(runThroughTurns,2000);
+    runThroughTurns();
+}
+*/
+//spin of the wheel
+
+
 //var player_dict; //dict of players and their points <- needed because then we'd have to grab that value way too often
 
 //everytime anyone gets a c right, give them the multiplier in points
@@ -347,4 +441,3 @@ things that will be needed
     //if have enough money
     //   guess random index vowel from tempv
     
-*/

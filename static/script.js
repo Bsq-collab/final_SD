@@ -9,7 +9,7 @@ var tempc = cons;
 var tempv = vow;
 
 // get the answer title and hint
-var answer = document.getElementById("answer");
+var answer = document.getElementById("anst");
 var title = document.getElementById("title");
 var hint = document.getElementById("hint");
 var pic= document.getElementById("pic");
@@ -330,11 +330,11 @@ for when trying to check which players are computers/users
 things that will be needed
 */
 
-
-var noncpu; //number of noncpu players
-var current_turn; //will be the id
-var multiplier; //spin of the wheel
-var player_dict; //dict of players and their points <- needed because then we'd have to grab that value way too often
+/*
+//var noncpu; //number of noncpu players
+//var current_turn; //will be the id
+//var multiplier; //spin of the wheel
+//var player_dict; //dict of players and their points <- needed because then we'd have to grab that value way too often
 
 //everytime anyone gets a c right, give them the multiplier in points
 //everytime guesses a vowel, lose 100
@@ -347,3 +347,4 @@ var player_dict; //dict of players and their points <- needed because then we'd 
     //if have enough money
     //   guess random index vowel from tempv
     
+*/

@@ -202,3 +202,6 @@ Fixed error caused by bad naming in the css file
 ibnulJ -- 2018-01-21 17:18:49
 Created CPU turn functions and methods and integrated them into the ggameplay. Now the users will go, accompanied by alerts that say what the CPUs have done on their turns. A better idea would be to write this all down on a board. We still need have a way for CPUs to guess vowels, solve, or win the game
 
+ibnulJ -- 2018-01-21 19:50:52
+Increments between players turns, and shows the user the CPUs turn
+

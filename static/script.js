@@ -75,6 +75,14 @@ console.log(scores);
 */
 
 var chars = category.getElementsByTagName("li");
+
+//says whose turn it is
+var currTurn = document.createElement("H1");
+currTurn.setAttribute("id", "currPlayer");
+currTurn.setAttribute('style', "color: white; font-size: 80px; text-align: center;");
+currTurn.innerHTML = document.getElementById('0 name').innerHTML;
+body.appendChild(currTurn);
+
 category = body.appendChild(category);
 body.innerHTML += "\n"
 console.log(chars)
@@ -362,6 +370,9 @@ var currentTurn = "0"; //will be the id
 //increments turn
 var nextTurn = function() {
     currentTurn = ((parseInt(currentTurn) + 1)%3).toString();
+    console.log("current turn " + document.getElementById(currentTurn + ' name').innerHTML);
+    document.getElementById('currPlayer').innerHTML = document.getElementById(currentTurn + ' name').innerHTML;
+    currTurn.innerHTML = "pls"; //document.getElementById(currentTurn + ' name').innerHTML;
 }
 //nextTurn();
 //console.log(currentTurn);
@@ -415,7 +426,8 @@ var runThroughTurns = function(){
 	return;
     } else {
 	console.log("cpus turn");
-	guessRandomConsonant()
+	setTimeout(guessRandomConsonant, 2000);
+	//guessRandomConsonant()
 	//nextTurn();
     }
 }

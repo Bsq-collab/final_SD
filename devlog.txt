@@ -208,3 +208,6 @@ Increments between players turns, and shows the user the CPUs turn
 ibnulJ -- 2018-01-21 21:38:58
 Message board to record CPU action created
 
+ibnulJ -- 2018-01-21 22:50:21
+If you guess a consonant correctly, you get points added to your score based on the spin of the wheel and the number of letters you guessed
+

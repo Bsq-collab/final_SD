@@ -121,16 +121,18 @@ $(document).ready(function(){
 
 // pass in a char and it will fill it in if there are any
 var fillIn = function(char){
-  var letters=document.getElementsByName(char);
-  console.log("letters.length: "+letters.length);
-  if(letters.length == 0){
-    alert("there are no '" + char + "'");
-  }
-  for(var i=0; i<letters.length;i++){
-    var letter=letters[i];
-    console.log("letter: "+ letter);
-    letter.innerHTML= char;
-  }
+    var letters=document.getElementsByName(char);
+    console.log("letters.length: "+letters.length);
+    if(letters.length == 0){
+	alert("there are no '" + char + "'");
+    }
+    for(var i=0; i<letters.length;i++){
+	var letter=letters[i];
+	console.log("letter: "+ letter);
+	letter.innerHTML= char;
+    }
+    //console.log("THIS IS THE THING: " + (parseInt(getCurrPlayerMoney())));// + (multiplier*letters.length));
+    setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) + (multiplier*letters.length)).toString());
 }
 
 // ===================CONSONANT=========
@@ -429,7 +431,12 @@ var CPUfillIn = function(char){
     alert("CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "'");
 }
 
+//after every consonant guess, the turn is incremented and this is run
+//this is the cyle through turns method
+//it is very important
+//respect it
 var runThroughTurns = function(){
+    spinWheel();
     if (parseInt(currentTurn) < noncpu) {
 	console.log("current turn: " + currentTurn);
 	console.log("users turn");
@@ -441,6 +448,15 @@ var runThroughTurns = function(){
 	//nextTurn();
     }
 }
+
+var getCurrPlayerMoney = function(){
+    return document.getElementById(currentTurn).innerHTML;
+}
+
+var setCurrPlayerMoney = function(amount) {
+    document.getElementById(currentTurn).innerHTML = amount;
+}
+
 /*
 while (true) {
     //setTimeout(runThroughTurns,2000);

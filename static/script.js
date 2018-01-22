@@ -88,7 +88,9 @@ body.innerHTML += "\n"
 console.log(chars)
 
 
-
+// messages
+var messages = document.getElementById("messages");
+messages.setAttribute('style', "background-color: rgba(155, 155, 155, 0.8); border-radius: 10px; text-align: center; color: white; font-size: 15px; box-sizing: border-box; padding-left: 3%; padding-right: 3%;");
 
 
 // buttons
@@ -408,6 +410,11 @@ var CPUfillIn = function(char){
     var letters=document.getElementsByName(char);
     console.log("letters.length: "+letters.length);
     if(letters.length == 0){
+	var input = document.createElement('P');
+	input.innerHTML = "CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "', but there are none"; 
+	messages.insertBefore(input,messages.firstChild); // = document.getElementById("buttons");
+	//messages = [input].concat(messages);
+	//document.getElementById("messages") = [input].concat(messages);
 	alert("CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "', but there are none");
 	return;
     }
@@ -416,6 +423,9 @@ var CPUfillIn = function(char){
 	console.log("letter: "+ letter);
 	letter.innerHTML= char;
     }
+    var input = document.createElement('P');
+    input.innerHTML = "CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "'"; 
+    messages.insertBefore(input,messages.firstChild); // = document.getElementById("buttons");
     alert("CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "'");
 }
 

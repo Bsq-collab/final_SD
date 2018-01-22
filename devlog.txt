@@ -205,3 +205,6 @@ Created CPU turn functions and methods and integrated them into the ggameplay. N
 ibnulJ -- 2018-01-21 19:50:52
 Increments between players turns, and shows the user the CPUs turn
 
+ibnulJ -- 2018-01-21 21:38:58
+Message board to record CPU action created
+

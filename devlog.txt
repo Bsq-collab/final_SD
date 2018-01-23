@@ -10,24 +10,28 @@ pd 7
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
+Even though we set out with an initial goal in mind through the design doc, we ended up having 
+
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
-
-
+When an ampersand appears it is displayed as 4 separate characters 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+* How to deal with merge conflicts
+* Mastered Javascript
+* How to use popups 
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We decided to use javascript for the bulk of our project.
+Didn't include lose a turn or bankrupt.
+We didn't make our own wheel but found another way to "spin" a random number.
+   the numbers appear to spin and there is a spin gif.
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-tales of wisdom gained...
+We should be MORE clear in our design doc and make sure everyone is on the same page before starting.
 
 
 ||||||||||||||||||||||||||||||||||||||||||

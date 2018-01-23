@@ -315,7 +315,7 @@ var checkA = function(){
   var a= arrToStr(ans);
   console.log("a:_"+ a+"_");
   console.log("a==char.value: "+ a==char.value);
-  if(char.value+" "==a){
+    if(char.value.toUpperCase()+" "==a.toUpperCase()){
 	  alert("CORRECT");
 	  var playerInfo = document.getElementById("playernav").innerHTML;
 	  console.log(playerInfo);
@@ -537,17 +537,18 @@ var randomConsonant = function() {
 }
 
 var guessRandomConsonant = function(){
-  char = randomConsonant();
-  //console.log(char);
-  console.log("|" + char + "|");
-  tempc.splice(tempc.indexOf(char), 1);
-  console.log(tempc);
-  CPUfillIn(char);
-  if (tempc.length == 0) {
-	  guessc.disabled= true;
-  }
-  nextTurn();
-  runThroughTurns();
+    char = randomConsonant();
+    //console.log(char);
+    console.log("|" + char + "|");
+    tempc.splice(tempc.indexOf(char), 1);
+    console.log(tempc);
+    CPUfillIn(char);
+    if (tempc.length == 0) {
+	noCLeft = true;
+	guessc.disabled= true;
+    }
+    nextTurn();
+    runThroughTurns();
 }
 
 // CPU guessing helper function

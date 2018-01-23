@@ -229,3 +229,6 @@ spin function
 charlesW -- 2018-01-23 12:09:05
 cleaned up app.py
 
+charlesW -- 2018-01-23 13:27:24
+cleaned up templates
+

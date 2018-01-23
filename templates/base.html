@@ -2,25 +2,25 @@
 <html lang="en-US">
   <head>
     <meta charset="UTF-8">
-    <title>WHEEL OF FORTUNE{% block title %}{% endblock title %}</title>
+    <title>
+      WHEEL OF FORTUNE{% block title %}{% endblock title %}
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!--suppress HtmlUnknownTarget -->
-    <link rel="stylesheet" type="text/css" href="static/style.css">
 
+    <link rel="stylesheet" type="text/css" href="static/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
           integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
           crossorigin="anonymous">
-
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <script src="/static/jquery-3.1.1.min.js"></script>
   </head>
 
-  {% if self._TemplateReference__context.name == "home.html" %}
 
-  <body class="center" id="homebody">
+  <body class="center">
+    <!-- navbar -->
     <nav class="navbar fixed-top navbar-dark bg-dark">
       <a class="navbar-brand" href="/">
         WHEEL OF FORTUNE
@@ -32,130 +32,26 @@
     <br><br><br>
 
     <div class="notNav" id="bodyy">
-      {% block body1 %}
+      {% block body %}
 
-      {% endblock body1 %}
+      {% endblock body %}
     </div>
 
     <div class="notNav" id="buttons">
-      {% block buttons1 %}
+      {% block buttons %}
 
       {% endblock %}
     </div>
 
-    {% block footer1 %}
+    <div class="notNav" id="messages">
+      {% block messages %}
 
-    {% endblock footer1 %}
+      {% endblock %}
+    </div>
+
+    {% block footer %}
+
+    {% endblock footer %}
   </body>
-  
-  {% else %}
-
-  {% if self._TemplateReference__context.name == "playerSignUp.html" %}
-
-   <body class="center" id="signbody">
-    <nav class="navbar fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">
-        WHEEL OF FORTUNE
-      </a>
-      <a class="navbar-brand" href="/directions" target="_blank">
-        Directions
-      </a>
-    </nav>
-    <br><br><br>
-
-    <div class="notNav" id="bodys">
-      {% block body2 %}
-
-      {% endblock body2 %}
-    </div>
-
-    <div class="notNav" id="buttonss">
-      {% block buttons2 %}
-
-      {% endblock %}
-    </div>
-
-    {% block footer2 %}
-
-    {% endblock footer2 %}
-  </body>
-
-  {% else %}
-
-
-  {% if self._TemplateReference__context.name == "game.html" %}
-
-    <body class="center" id="gamebody">
-      <nav class="navbar fixed-top navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">
-          WHEEL OF FORTUNE
-        </a>
-	 <a class="navbar-brand" href="/directions" target="_blank">
-        Directions
-      </a>
-      </nav>
-      <br><br><br>
-
-      <div class="notNav" id="bodyy">
-        {% block bodyg %}
-
-        {% endblock bodyg %}
-      </div>
-
-      <div class="notNav" id="buttons">
-        {% block buttonsg %}
-
-        {% endblock %}
-      </div>
-
-      <br><br><br>
-      
-      <div class="notNav" id="messages">
-        {% block messages %}
-
-        {% endblock %}
-      </div>
-
-      {% block footerg %}
-
-      {% endblock %}
-    </body>
-
-    {% else %}
-
-    <body class="center">
-      <nav class="navbar fixed-top navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">
-          WHEEL OF FORTUNE
-        </a>
-	 <a class="navbar-brand" href="/directions" target="_blank">
-        Directions
-      </a>
-      </nav>
-      <br><br><br>
-
-      <div class="notNav" id="bodyy">
-        {% block body %}
-
-        {% endblock body %}
-      </div>
-
-      <div class="notNav" id="buttons">
-        {% block buttons %}
-
-        {% endblock %}
-      </div>
-
-      {% block footer %}
-
-      {% endblock footer %}
-    </body>
-
-    {% endif %}
-
-    {% endif %}
-
-    {% endif %}
-
 
 </html>

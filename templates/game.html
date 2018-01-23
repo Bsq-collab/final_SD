@@ -1,19 +1,22 @@
 {% extends "base.html" %}
 
 {% block title %}
-  - Game
+ - Game
 {% endblock %}
 
 
-{% block bodyg %}
+{% block body %}
+  <!-- values passed to js -->
   <p id="anst">{{round["answer"]}}</p>
   <p id="title">{{round["title"]}}</p>
   <p id="hint">{{round["hint"]}}</p>
   <p id="pic">{{round["pic"]}}</p>
- {% endblock %}
+{% endblock %}
 
 
-{% block buttonsg %}
+<!-- the popups that the butttons bring up are stored here -->
+{% block buttons %}
+  <!-- guessing consonant popup -->
   <div id="guess" class="popup">
     <div class="words">
       <span class="close">&times;</span>
@@ -24,6 +27,7 @@
     </div>
   </div>
 
+  <!-- guessing vowels popup -->
   <div id="guessv" class="popup">
     <div class="words">
       <span class="close">&times;</span>
@@ -34,7 +38,7 @@
     </div>
   </div>
 
-
+  <!-- solving popup -->
   <div id="solve" class="popup">
     <div class="words">
       <span class="close">&times;</span>
@@ -45,59 +49,54 @@
     </div>
   </div>
 
-
-
+  <!-- question hint popup -->
   <div id="hq" class="popup">
     <div class="words">
       <span class="close">&times;</span>
       <p>Are you sure you'd like to buy the question hint?</p>
       <form onsubmit="return showQ('yes')">
       	<input type="submit" value="Yes" id="answer"></input>
-	<input type="button" value="No" id="answer" onclick="showQ('no')">
+      	<input type="button" value="No" id="answer" onclick="showQ('no')">
       </form>
     </div>
   </div>
 
+  <!-- picture hint popup -->
   <div id="hp" class="popup">
     <div class="words">
       <span class="close">&times;</span>
       <p>Are you sure you'd like to buy the picture hint?</p>
       <form onsubmit="return showP('yes')">
       	<input type="submit" value="Yes" id="answer"></input>
-	<input type="button" value="No" id="answer" onclick="showP('no')">
+      	<input type="button" value="No" id="answer" onclick="showP('no')">
       </form>
     </div>
   </div>
 
-
+  <!-- wheel gif popup -->
   <div id="wheel" class="popup">
     <div class="words">
       <span class="close">&times;</span>
-
       <img id="wheelspinning" src="static/img/wheelspinning.gif" alt="Wheel Spinning" height="450" width="750"  align="middle";>
-
     </div>
   </div>
 
-
-
 {% endblock %}
 
 
+{% block footer %}
+  <!-- player score footer -->
+  <nav id ="playernav" class="navbar fixed-bottom navbar-light bg-light">
+    <ul id="scores" class="nav navbar-nav bd-navbar-nav flex-row">
+      {% for player in players %}
+        <li id="{{players.index(player)}} name" class="nav-item">{{player}}</li>:<li id="{{players.index(player)}}" class="nav-item"> {{player_dict[player]}}</li>
+      {% endfor %}
+    </ul>
+  </nav>
 
-{% block messages %}
-
-{% endblock %}
-
-
-{% block footerg %}
-<nav id ="playernav" class="navbar fixed-bottom navbar-light bg-light">
-  <ul id="scores" class="nav navbar-nav bd-navbar-nav flex-row">
-    {% for player in players %}
-    <li id="{{players.index(player)}} name" class="nav-item">{{player}}</li>:<li id="{{players.index(player)}}" class="nav-item"> {{player_dict[player]}}</li>
-    {% endfor %}
-  </ul>
-</nav>
-<script src="/static/script.js"></script>
-
+  <!-- include scripts -->
+  <script>
+    document.getElementsByTagName('body')[0].setAttribute("id", "gamebody");
+  </script>
+  <script src="/static/script.js"></script>
 {% endblock %}

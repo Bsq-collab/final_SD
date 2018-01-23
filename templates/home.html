@@ -1,24 +1,22 @@
 {% extends "base.html" %}
 
-{% block body1 %}
-<br><br><br>
-
-
+{% block body %}
+  <br><br><br>
     <h1> Welcome! </h1>
-  <br>
-    <div class="mx-auto" style="width: 600px;">
-    </div>
-    <br><br>
+    <br><br><br>
     <strong>Know how to play?</strong>
     <br>
-
-    <!--suppress HtmlUnknownTarget -->
     <a href="/start" class="btn btn-link">Get Started</a>
 
     <br> <br>
     <strong>Cool... but how do I play?</strong>
     <br>
 
-    <!--suppress HtmlUnknownTarget -->
     <a href="/directions" class="btn btn-link"> Directions</a>
-{% endblock body1 %}
+{% endblock body %}
+
+{% block footer %}
+  <script>
+    document.getElementsByTagName('body')[0].setAttribute("id", "homebody");
+  </script>
+{% endblock %}

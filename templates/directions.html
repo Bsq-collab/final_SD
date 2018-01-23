@@ -1,64 +1,52 @@
 {% extends "base.html" %}
 
+{% block title %}
+ - Directions
+{% endblock %}
+
 {% block body %}
+  <h1> How To Play</h1>
+  <br>
+  <div class="mx-auto" style="width: 600px;">
 
-<h1> How To Play</h1>
-<br>
-<div class="mx-auto" style="width: 600px;">
+  </div>
+  Wheel of Fortune is a game in which the contestants are faced with an unknown phrase which they have to figure out by taking turns to guess letters. Once it's your turn you have the option of doing one of these:
+  <ul>
+    <li>
+      <h3> Spinning the wheel</h3>
+      If you decide to spin the wheel and land on a <i>number value</i> (500) you will be asked to choose a consonant. If you pick an R, for example, and there are 5 Rs in the puzzle. You will receive 500*5 points. If there is no R in the puzzle it's the next player's turn. If there is you can choose from the other 3 options (vowel,hint, solve).
+      <br><br>
+      If you land on <i>Lose a Turn</i> You won't be able to do anything and it's automatically the next player's turn.
+      <br><br>
+      If you land on <i>Bankrupt</i> You will lose all your accumulated earnings in this round and lose a turn.
+      <br><br>
+      If you land on <i>Free Spin</i> You can guess a letter and if it's not in the puzzle you will get another spin. If it is in the puzzle you get 300 unless it's a vowel. If you guess a vowel you won't have to pay 250
+    </li>
+    <li>
+      <h3> Buying a Vowel</h3>
+      Vowels cost 250 points
+      If you choose to buy a vowel and pick a vowel that is not in the puzzle, it is the next player's turn
+      If you pick a vowel that is in the puzzle you will not get any points. And you will be prompted with the other remaining options.
+    </li>
+    <li>
+      <h3> Buying a Hint</h3>
+      There are two types of hints.
+      If you buy a <i>Question Hint</i> which costs 1000 points you will get a jeopardy question hint to help you solve the puzzle.
+      If you buy a <i> Picture Hint</i> which costs 500 points you will receive a picture that somehow connects to the phrase you're trying to figure out.
+    </li>
+    <li>
+      <h3> Solving the Puzzle</h3>
+      If you choose to solve the puzzle you will be prompted to type in what you think the answer is and if it matches you will win the puzzle. If you answer incorrectly you don't lose anything but it is the next person's turn (you can't buy a vowel or hint).
+    </li>
+  </ul>
 
-</div>
-Wheel of Fortune is a game in which the contestants are faced with an unknown phrase which they have to figure out by taking turns to guess letters. Once it's your turn you have the option of doing one of these:
-<ul>
-  <li>
-
-    <h3> Spinning the wheel</h3>
-
-    If you decide to spin the wheel and land on a <i>number value</i> (500) you will be asked to choose a consonant. If you pick an R, for example, and there are 5 Rs in the puzzle. You will receive 500*5 points. If there is no R in the puzzle it's the next player's turn. If there is you can choose from the other 3 options (vowel,hint, solve).
-    <br><br>
-    If you land on <i>Lose a Turn</i> You won't be able to do anything and it's automatically the next player's turn.
-    <br><br>
-    If you land on <i>Bankrupt</i> You will lose all your accumulated earnings in this round and lose a turn.
-    <br><br>
-    If you land on <i>Free Spin</i> You can guess a letter and if it's not in the puzzle you will get another spin. If it is in the puzzle you get 300 unless it's a vowel. If you guess a vowel you won't have to pay 250
-  </li>
-
-  <li>
-
-    <h3> Buying a Vowel</h3>
-
-    Vowels cost 250 points
-    If you choose to buy a vowel and pick a vowel that is not in the puzzle, it is the next player's turn
-    If you pick a vowel that is in the puzzle you will not get any points. And you will be prompted with the other remaining options.
-  </li>
-
-  <li>
-
-    <h3> Buying a Hint</h3>
-
-    There are two types of hints.
-    If you buy a <i>Question Hint</i> which costs 1000 points you will get a jeopardy question hint to help you solve the puzzle.
-    If you buy a <i> Picture Hint</i> which costs 500 points you will receive a picture that somehow connects to the phrase you're trying to figure out.
-  </li>
-
-  <li>
-
-    <h3> Solving the Puzzle</h3>
-
-    If you choose to solve the puzzle you will be prompted to type in what you think the answer is and if it matches you will win the puzzle. If you answer incorrectly you don't lose anything but it is the next person's turn (you can't buy a vowel or hint).
-
-  </li>
-
-</ul>
-
-<!--suppress HtmlUnknownTarget -->
-<strong>Get Started</strong>
-<a href="/start" class="btn btn-link">Play!</a>
-
-<br>
-<strong>Home Page</strong>
+  <strong>Get Started</strong>
+  <a href="/start" class="btn btn-link">Play!</a>
+  <br>
+  <strong>Home Page</strong>
 
 
-<!--suppress HtmlUnknownTarget -->
-<a href="/" class="btn btn-link"> Return</a>
-<br>
+  <a href="/" class="btn btn-link">Return</a>
+  <br>
+
 {% endblock body %}

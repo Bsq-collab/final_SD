@@ -60,8 +60,8 @@ const spin = function() {
     index %= 18;
     console.log(index);
     setTimeout(function(){
-       temp ++;
-       temp %= 18;
+      temp ++;
+      temp %= 18;
       var m = multi[temp];
       console.log(multi[temp]);
       document.getElementById('currMultiplier').innerHTML = "Multiplier: $" + m.toString();
@@ -239,25 +239,25 @@ var guessvPop = function(){
 guessv.setAttribute("onclick", "javascript:guessvPop()");
 
 var checkv = function(){
-    var char = document.getElementById('V');
-    console.log("|" + char.value + "|");
-    if (tempv.indexOf(char.value) == -1){
-	alert("please enter a VOWEL that hasn't been guessed previously");
-	return;
-    }else{
-	close();
-	fillIn(char.value);
-    }
-    tempv.splice(tempv.indexOf(char.value), 1);
-    console.log(tempv);
-    if (tempv.length == 0) {
-	noVLeft = true;
-	guessv.disabled= true;
-    }
-    setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) - vowelCost).toString());
-    setButtons();
-    
-    guessv.innerHTML = "Guess a VOWEL ($" + vowelCost.toString() + ")";
+  var char = document.getElementById('V');
+  console.log("|" + char.value + "|");
+  if (tempv.indexOf(char.value) == -1){
+	  alert("please enter a VOWEL that hasn't been guessed previously");
+	  return;
+  }else{
+	  close();
+	  fillIn(char.value);
+  }
+  tempv.splice(tempv.indexOf(char.value), 1);
+  console.log(tempv);
+  if (tempv.length == 0) {
+	  noVLeft = true;
+	  guessv.disabled= true;
+  }
+  setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) - vowelCost).toString());
+  setButtons();
+  
+  guessv.innerHTML = "Guess a VOWEL ($" + vowelCost.toString() + ")";
 }
 //===============================ANSWER======
 // guess button brings up popup for guess
@@ -292,7 +292,7 @@ var checkA = function(){
   var a= arrToStr(ans);
   console.log("a:_"+ a+"_");
   console.log("a==char.value: "+ a==char.value);
-    if(char.value.toUpperCase()+" "==a.toUpperCase()){
+  if(char.value.toUpperCase()+" "==a.toUpperCase()){
 	  alert("CORRECT");
 	  var playerInfo = document.getElementById("playernav").innerHTML;
 	  console.log(playerInfo);
@@ -310,8 +310,8 @@ var checkA = function(){
 }
 
 var CPUcheckA = function(){
-    var a= arrToStr(ans);
-    console.log("a:_"+ a+"_");
+  var a= arrToStr(ans);
+  console.log("a:_"+ a+"_");
   if(Math.random() < 0.33){
 	  alert("CPU has guessed '"+ a + "', and they are correct!");
 	  document.body.innerHTML = "";
@@ -340,31 +340,21 @@ hq.setAttribute("onclick", "javascript:buyQ()");
 
 
 var showQ = function(ans){
-    if (ans == "no") {
-	close();
-	return;
-    }
-    //document.body.innerHTML += "<br><br>";
-    //newLine();
-    //newLine();
-    //openCenter();
-    //hint.innerHTML = "<br><br>" + hint.innerHTML;
-    var display_hint = document.createElement("P");
-    display_hint.innerHTML = hint.innerHTML;
-    //hint.style.textAlign = "center";
-    //hint.style.color = "white";
-    //hint.style.backgroundColor = "rgba(255,0,0,0.4)";
-    //document.body.appendChild(hint);
-    display_hint.style.textAlign = "center";
-    display_hint.style.color = "white";
-    display_hint.style.backgroundColor = "rgba(255,0,0,0.4)";
-    document.body.appendChild(display_hint);
-    setCurrPlayerMoney((parseInt(getCurrPlayerMoney()) - hqCost).toString());
-    noQHint = true;
-    hq.disabled = true;
-    setButtons();
-    //closeCenter();
-    close();
+  if (ans == "no") {
+	  close();
+	  return;
+  }
+  var display_hint = document.createElement("P");
+  display_hint.innerHTML = hint.innerHTML;
+  display_hint.style.textAlign = "center";
+  display_hint.style.color = "white";
+  display_hint.style.backgroundColor = "rgba(255,0,0,0.4)";
+  document.body.appendChild(display_hint);
+  setCurrPlayerMoney((parseInt(getCurrPlayerMoney()) - hqCost).toString());
+  noQHint = true;
+  hq.disabled = true;
+  setButtons();
+  close();
 }
 
 //===============================Picture Hint==========
@@ -380,43 +370,29 @@ hp.setAttribute("onclick", "javascript:buyP()");
 
 
 var showP = function(ans){
-    if (ans == "no") {
-	close();
-	return;
-    }
-    var pi="<img src='"+p+"'/>"
-    console.log("pi: "+pi);
-    var im=document.createElement("img");
-    im.setAttribute('src',p);
-    im.setAttribute('height','200px');
-    im.setAttribute('width','200px');
-    im.setAttribute('style', "display: block; margin: 0 auto;");
-    document.body.appendChild(im);
-    setCurrPlayerMoney((parseInt(getCurrPlayerMoney()) - hpCost).toString());
-    noPHint = true;
-    hp.disabled = true;
-    setButtons();
-    close();
+  if (ans == "no") {
+	  close();
+	  return;
+  }
+  var pi="<img src='"+p+"'/>"
+  console.log("pi: "+pi);
+  var im=document.createElement("img");
+  im.setAttribute('src',p);
+  im.setAttribute('height','200px');
+  im.setAttribute('width','200px');
+  im.setAttribute('style', "display: block; margin: 0 auto;");
+  document.body.appendChild(im);
+  setCurrPlayerMoney((parseInt(getCurrPlayerMoney()) - hpCost).toString());
+  noPHint = true;
+  hp.disabled = true;
+  setButtons();
+  close();
 }
-
-
-
-
-
-/*
-// background specific to this page
-document.getElementsByTagName("body")[0].style.backgroundImage = "url(http://vignette1.wikia.nocookie.net/gameshows/images/6/61/Wheel_of_Fortune_Puzzle_Board_6.png/revision/latest?cb=20130127193907)"
-document.getElementsByTagName("body")[0].style.backgroundRepeat = "no-repeat"
-document.getElementsByTagName("body")[0].style.backgroundAttachment = "fixed"
-document.getElementsByTagName("body")[0].style.backgroundPosition = "center"
-*/
 
 console.log(body);
 console.log(body.innerHTML);
 console.log(buttons);
 console.log(buttons.innerHTML);
-
-
 
 /*----------------------------HELPER FUNCTIONS FOR AESTHETICS-------------*/
 
@@ -452,7 +428,6 @@ var findNoncpu = function() {
 	  if (document.getElementById('1 name').innerHTML.includes('CPU')) {
 	    return 1;
 	  } else {
-	    //console.log(document.getElementById('1 name').innerHTML.includes('CPU'));
 	    return 2;
 	  }
   } else {
@@ -460,7 +435,6 @@ var findNoncpu = function() {
   }
 }
 var noncpu = findNoncpu(); //number of noncpu players
-//console.log(noncpu);
 
 var currentTurn = "0"; //will be the id
 //increments turn
@@ -472,10 +446,7 @@ var nextTurn = function() {
   spinWheel();
   console.log("current multiplier " + multiplier);
   document.getElementById('currMultiplier').innerHTML = ("Multiplier: $" + multiplier.toString());
-  //currTurn.innerHTML = "pls"; //document.getElementById(currentTurn + ' name').innerHTML;
 }
-//nextTurn();
-//console.log(currentTurn);
 
 
 
@@ -485,18 +456,17 @@ var randomConsonant = function() {
 }
 
 var guessRandomConsonant = function(){
-    char = randomConsonant();
-    //console.log(char);
-    console.log("|" + char + "|");
-    tempc.splice(tempc.indexOf(char), 1);
-    console.log(tempc);
-    CPUfillIn(char);
-    if (tempc.length == 0) {
-	noCLeft = true;
-	guessc.disabled= true;
-    }
-    nextTurn();
-    runThroughTurns();
+  char = randomConsonant();
+  console.log("|" + char + "|");
+  tempc.splice(tempc.indexOf(char), 1);
+  console.log(tempc);
+  CPUfillIn(char);
+  if (tempc.length == 0) {
+	  noCLeft = true;
+	  guessc.disabled= true;
+  }
+  nextTurn();
+  runThroughTurns();
 }
 
 // CPU guessing helper function
@@ -507,8 +477,6 @@ var CPUfillIn = function(char){
 	  var input = document.createElement('P');
 	  input.innerHTML = "CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "', but there are none";
 	  messages.insertBefore(input,messages.firstChild); // = document.getElementById("buttons");
-	  //messages = [input].concat(messages);
-	  //document.getElementById("messages") = [input].concat(messages);
 	  alert("CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "', but there are none");
 	  return;
   }
@@ -526,10 +494,6 @@ var CPUfillIn = function(char){
   alert("CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "'");
 }
 
-//after every consonant guess, the turn is incremented and this is run
-//this is the cyle through turns method
-//it is very important
-//respect it
 var runThroughTurn = function(){
   if (parseInt(currentTurn) < noncpu) {
 	  console.log("current : " + currentTurn);
@@ -537,18 +501,12 @@ var runThroughTurn = function(){
 	  return;
   } else {
 	  console.log("cpus turn");
-	  //while (popups[5].style.display == 'block'){
-	  //delay();
-	  //  console.log("Spinning Wheel");
-	  //}
 	  console.log("popup: " + popups[5].style.display);
 	  if (tempc.length == 0) {
 	    setTimeout(CPUcheckA, 2000);
 	  } else {
 	    setTimeout(guessRandomConsonant, 2000);
 	  }
-	  //guessRandomConsonant()
-	  //nextTurn();
   }
 }
 
@@ -570,11 +528,11 @@ var setButtons = function(){
 	  if (noVLeft) {
 	    guessv.disabled = true;
 	  } else {
-	      if (vowelCost > parseInt(getCurrPlayerMoney())) {
-		  guessv.disabled = true;
-	      } else {
-		  guessv.disabled = false;
-	      }
+	    if (vowelCost > parseInt(getCurrPlayerMoney())) {
+		    guessv.disabled = true;
+	    } else {
+		    guessv.disabled = false;
+	    }
 	  }
 	  if (noCLeft) {
 	    guessc.disabled = true;

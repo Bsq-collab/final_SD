@@ -211,3 +211,6 @@ Message board to record CPU action created
 ibnulJ -- 2018-01-21 22:50:21
 If you guess a consonant correctly, you get points added to your score based on the spin of the wheel and the number of letters you guessed
 
+ibnulJ -- 2018-01-23 04:42:12
+Money works pretty much exactly as expected. Gain money based on amounts and multiplier for consonants, lose money for vowels. As of now vowels get more expensive to add a challenge. Multiplier switches, tried to animate this but commented out code because it wouldn't work. Buttons are also completely functional now: all are disabled during the CPUs turn, and only the appropriate ones turn on during a human's turn
+

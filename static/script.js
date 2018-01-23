@@ -3,10 +3,17 @@
 const cons = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
 const vow = ['a', 'e', 'i', 'o', 'u'];
+const vowCost = 250;
 
 // keeps track of current game's vowels and consts
 var tempc = cons;
 var tempv = vow;
+var vowelCost = vowCost;
+
+var noVLeft = false;
+var noCLeft = false;
+var noPHint = false;
+var noQHint = false;
 
 // get the answer title and hint
 var answer = document.getElementById("anst");
@@ -23,6 +30,32 @@ console.log(ans);
 console.log(tit);
 console.log(hin);
 console.log(p);
+/*
+//setAttribute('style', "color: white; font-size: 80px; text-align: center;");
+//var wheel = document.getElementById('wheelimg');
+//wheel.setAttribute('-webkit-transform', 'rotate(180deg)');
+//wheel.setAttribute(' -moz-transform', 'rotate(180deg)');
+//wheel.setAttribute('-ms-transform', 'rotate(180deg)');
+//wheel.setAttribute('-o-transform', 'rotate(180deg)');
+//wheel.setAttribute('transform', 'rotate(180deg)');
+*/
+//default time for spin is 5000 ms (5s)
+var spinWheel = function(){
+    //popups[5].style.display = "block";
+    //setTimeout(function(){ popups[5].style.display = 'none'; }, 3000);
+    //setTimeout(closeWheelPopup, 3000);
+    multiplier = Math.ceil(Math.random()*10)*100;
+}
+var openWheelPopup = function() {
+    popups[5].style.display = "block";
+}
+var closeWheelPopup = function() {
+    popups[5].style.display = "none";
+}
+
+var multiplier = Math.ceil(Math.random()*10)*100;
+//spinWheel();
+//console.log(multiplier);
 
 // process ans into 2d array of characters (ans[]->word; ans[][]->char)
 ans = ans.split(" ");
@@ -83,6 +116,14 @@ currTurn.setAttribute('style', "color: white; font-size: 80px; text-align: cente
 currTurn.innerHTML = document.getElementById('0 name').innerHTML;
 body.appendChild(currTurn);
 
+//says the current multiplier
+var currMultiplier = document.createElement("H4");
+currMultiplier.setAttribute("id", "currMultiplier");
+currMultiplier.setAttribute('style', "color: white; font-size: 30px; text-align: center;");
+currMultiplier.innerHTML = "Multiplier: $" + multiplier.toString();
+body.appendChild(currMultiplier);
+
+
 category = body.appendChild(category);
 body.innerHTML += "\n"
 console.log(chars)
@@ -131,8 +172,9 @@ var fillIn = function(char){
 	console.log("letter: "+ letter);
 	letter.innerHTML= char;
     }
+    return letters.length;
     //console.log("THIS IS THE THING: " + (parseInt(getCurrPlayerMoney())));// + (multiplier*letters.length));
-    setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) + (multiplier*letters.length)).toString());
+    //setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) + (multiplier*letters.length)).toString());
 }
 
 // ===================CONSONANT=========
@@ -154,11 +196,17 @@ var checkc = function(){
 	return;
     }else{
 	close();
-	fillIn(char.value);
+	var numLetters = fillIn(char.value);
+	var letters=document.getElementsByName(char);
+	//setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) + (multiplier*(document.getElementsByName('char')).length)).toString());
+	setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) + (multiplier*numLetters)).toString());
+	console.log("CurrentMoney: " + getCurrPlayerMoney());
+	console.log("Letters: " + letters.length);
     }
     tempc.splice(tempc.indexOf(char.value), 1);
     console.log(tempc);
     if (tempc.length == 0) {
+	noCLeft = true;
 	guessc.disabled= true;
     }
     console.log(currentTurn);
@@ -173,7 +221,7 @@ var checkc = function(){
 body.innerHTML += "\n"
 var guessv = document.createElement("button");
 guessv = buttons.appendChild(guessv);
-guessv.innerHTML = "Guess a VOWEL"
+guessv.innerHTML = "Guess a VOWEL ($" + vowelCost.toString() + ")";
 var guessvPop = function(){
   popups[1].style.display = "block";
 };
@@ -184,6 +232,7 @@ var checkv = function(){
     console.log("|" + char.value + "|");
     if (tempv.indexOf(char.value) == -1){
 	alert("please enter a VOWEL that hasn't been guessed previously");
+	return;
     }else{
 	close();
 	fillIn(char.value);
@@ -191,8 +240,12 @@ var checkv = function(){
     tempv.splice(tempv.indexOf(char.value), 1);
     console.log(tempv);
     if (tempv.length == 0) {
+	noVLeft = true;
 	guessv.disabled= true;
     }
+    setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) - vowelCost).toString());
+    vowelCost *= 2;
+    guessv.innerHTML = "Guess a VOWEL ($" + vowelCost.toString() + ")";
 }
 //===============================ANSWER======
 // guess button brings up popup for guess
@@ -273,6 +326,7 @@ var showQ = function(ans){
     display_hint.style.color = "white";
     display_hint.style.backgroundColor = "rgba(255,0,0,0.4)";
     document.body.appendChild(display_hint);
+    noQHint = true;
     hq.disabled = true;
     //closeCenter();
     close();
@@ -303,6 +357,7 @@ var showP = function(ans){
     im.setAttribute('width','200px');
     im.setAttribute('style', "display: block; margin: 0 auto;");
     document.body.appendChild(im);
+    noPHint = true;
     hp.disabled = true;
     close();
 }
@@ -374,19 +429,18 @@ var currentTurn = "0"; //will be the id
 //increments turn
 var nextTurn = function() {
     currentTurn = ((parseInt(currentTurn) + 1)%3).toString();
+    setButtons();
     console.log("current turn " + document.getElementById(currentTurn + ' name').innerHTML);
     document.getElementById('currPlayer').innerHTML = document.getElementById(currentTurn + ' name').innerHTML;
-    currTurn.innerHTML = "pls"; //document.getElementById(currentTurn + ' name').innerHTML;
+    spinWheel();
+    console.log("current multiplier " + multiplier);
+    document.getElementById('currMultiplier').innerHTML = ("Multiplier: $" + multiplier.toString());
+    //currTurn.innerHTML = "pls"; //document.getElementById(currentTurn + ' name').innerHTML;
 }
 //nextTurn();
 //console.log(currentTurn);
 
-var spinWheel = function(){
-    multiplier = Math.ceil(Math.random()*10)*100;
-}
-var multiplier = Math.ceil(Math.random()*10)*100;
-//spinWheel();
-//console.log(multiplier);
+
 
 // returns a random eligible consonant
 var randomConsonant = function() {
@@ -425,6 +479,9 @@ var CPUfillIn = function(char){
 	console.log("letter: "+ letter);
 	letter.innerHTML= char;
     }
+    //changes money
+    setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) + (multiplier*letters.length)).toString());
+    //records the message and makes the alert
     var input = document.createElement('P');
     input.innerHTML = "CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "'"; 
     messages.insertBefore(input,messages.firstChild); // = document.getElementById("buttons");
@@ -435,18 +492,26 @@ var CPUfillIn = function(char){
 //this is the cyle through turns method
 //it is very important
 //respect it
-var runThroughTurns = function(){
-    spinWheel();
+var runThroughTurn = function(){
     if (parseInt(currentTurn) < noncpu) {
-	console.log("current turn: " + currentTurn);
+	console.log("current : " + currentTurn);
 	console.log("users turn");
 	return;
     } else {
 	console.log("cpus turn");
+	//while (popups[5].style.display == 'block'){
+	    //delay();
+	  //  console.log("Spinning Wheel");
+	//}
+	console.log("popup: " + popups[5].style.display);
 	setTimeout(guessRandomConsonant, 2000);
 	//guessRandomConsonant()
 	//nextTurn();
     }
+}
+
+var runThroughTurns = function(){
+    setTimeout(runThroughTurn,0);
 }
 
 var getCurrPlayerMoney = function(){
@@ -455,6 +520,44 @@ var getCurrPlayerMoney = function(){
 
 var setCurrPlayerMoney = function(amount) {
     document.getElementById(currentTurn).innerHTML = amount;
+}
+
+var setButtons = function(){
+    if (parseInt(currentTurn) < noncpu) {
+	console.log("buttons being set up for user");
+	if (noVLeft) {
+	    guessv.disabled = true;
+	} else {
+	    if (vowelCost > parseInt(getCurrPlayerMoney())) {
+		guessv.disabled = true;
+	    } else {
+		guessv.disabled = false;
+	    }
+	}
+	if (noCLeft) {
+	    guessc.disabled = true;
+	} else {
+	    guessc.disabled = false;
+	}
+	if (noPHint) {
+	    hp.disabled = true;
+	} else {
+	    hp.disabled = false;
+	}
+	if (noQHint) {
+	    hq.disabled = true;
+	} else {
+	    hq.disabled = false;
+	}
+	solve.disabled = false;
+
+    } else {
+	guessc.disabled=true;
+	guessv.disabled=true;
+	solve.disabled=true;
+	hp.disabled=true;
+	hq.disabled=true;
+    }
 }
 
 /*
@@ -473,6 +576,19 @@ while (true) {
 //solves questions gets 3000, but also wins so whatev
 //word hint costs 1000
 //picture hints costs 500
+
+
+/* Attributes for rotation
+   -webkit-transform:rotate(180deg);
+   -moz-transform: rotate(180deg);
+   -ms-transform: rotate(180deg);
+   -o-transform: rotate(180deg);
+   transform: rotate(180deg);
+*/
+
+
+
+
 
 //var cpuTurn = function(id)
     //guesses letter

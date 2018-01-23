@@ -223,3 +223,9 @@ added leaderboard to congratulations page and displays winner name
 vivienL -- 2018-01-23 11:02:20
 changed gameboard color
 
+charlesW -- 2018-01-23 11:44:39
+spin function
+
+charlesW -- 2018-01-23 12:09:05
+cleaned up app.py
+

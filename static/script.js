@@ -48,30 +48,32 @@ var closeWheelPopup = function() {
   popups[5].style.display = "none";
 }
 
-var multiplier;
+var multiplier = 0;
 var timer;
 const spin = function() {
-  timer = 200;
-  var temp = index;
-  while(timer <= 3000){
-    timer += Math.random()*(timer-150);
-    console.log(timer);
-    index ++;
-    index %= 18;
-    console.log(index);
-    setTimeout(function(){
-      temp ++;
-      temp %= 18;
-      var m = multi[temp];
-      console.log(multi[temp]);
-      document.getElementById('currMultiplier').innerHTML = "Multiplier: $" + m.toString();
-    }, timer);
-  }
-  console.log();
-  multiplier = multi[index];
+    popups[5].style.display = "block";
+    setTimeout(closeWheelPopup, 1000);
+    timer = 200;
+    var temp = index;
+    while(timer <= 3000){
+	timer += Math.random()*(timer-150);
+	console.log(timer);
+	index ++;
+	index %= 18;
+	console.log(index);
+	setTimeout(function(){
+	    temp ++;
+	    temp %= 18;
+	    var m = multi[temp];
+	    console.log(multi[temp]);
+	    document.getElementById('currMultiplier').innerHTML = "Multiplier: $" + m.toString();
+	}, timer);
+    }
+    console.log();
+    multiplier = multi[index];
 }
 
-spin();
+
 // process ans into 2d array of characters (ans[]->word; ans[][]->char)
 ans = ans.split(" ");
 for (var i = 0; i < ans.length; i++){
@@ -451,13 +453,14 @@ var noncpu = findNoncpu(); //number of noncpu players
 var currentTurn = "0"; //will be the id
 //increments turn
 var nextTurn = function() {
-  currentTurn = ((parseInt(currentTurn) + 1)%3).toString();
-  setButtons();
-  console.log("current turn " + document.getElementById(currentTurn + ' name').innerHTML);
-  document.getElementById('currPlayer').innerHTML = document.getElementById(currentTurn + ' name').innerHTML;
-  spinWheel();
-  console.log("current multiplier " + multiplier);
-  document.getElementById('currMultiplier').innerHTML = ("Multiplier: $" + multiplier.toString());
+    currentTurn = ((parseInt(currentTurn) + 1)%3).toString();
+    setButtons();
+    console.log("current turn " + document.getElementById(currentTurn + ' name').innerHTML);
+    document.getElementById('currPlayer').innerHTML = document.getElementById(currentTurn + ' name').innerHTML;
+    //spinWheel();
+    spin();
+    console.log("current multiplier " + multiplier);
+    document.getElementById('currMultiplier').innerHTML = ("Multiplier: $" + multiplier.toString());
 }
 
 
@@ -515,9 +518,9 @@ var runThroughTurn = function(){
 	  console.log("cpus turn");
 	  console.log("popup: " + popups[5].style.display);
 	  if (tempc.length == 0) {
-	    setTimeout(CPUcheckA, 2000);
+	    setTimeout(CPUcheckA, 4000);
 	  } else {
-	    setTimeout(guessRandomConsonant, 2000);
+	    setTimeout(guessRandomConsonant, 4000);
 	  }
   }
 }
@@ -580,4 +583,6 @@ var setButtons = function(){
   }
 }
 
+spin();
+runThroughTurns();
 setButtons();

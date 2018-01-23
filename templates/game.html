@@ -91,7 +91,7 @@
 
 
 {% block footerg %}
-<nav class="navbar fixed-bottom navbar-light bg-light">
+<nav id ="playernav" class="navbar fixed-bottom navbar-light bg-light">
   <ul id="scores" class="nav navbar-nav bd-navbar-nav flex-row">
     {% for player in players %}
     <li id="{{players.index(player)}} name" class="nav-item">{{player}}</li>:<li id="{{players.index(player)}}" class="nav-item"> {{player_dict[player]}}</li>

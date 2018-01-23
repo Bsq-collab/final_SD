@@ -292,17 +292,19 @@ var checkA = function(){
     console.log("a==char.value: "+ a==char.value);
     if(char.value+" "==a){
 	alert("CORRECT");
+	var playerInfo = document.getElementById("playernav").innerHTML;
+	console.log(playerInfo);
+	var winner = (document.getElementById('currPlayer').innerHTML);
 	document.body.innerHTML = "";
 	var cgts = document.createElement("h1");
-	cgts.innerHTML = "CONGRATULATIONS!" + "<br>" + "YOU GUESSED CORRECTLY!";
+	var finalscores = document.createElement("div");
+	cgts.innerHTML = "CONGRATULATIONS!" + "<br>" + winner + " solved correctly!";
 	cgts.setAttribute('style', "color: white; font-size: 100px; text-align: center;");
+	finalscores.setAttribute('style', "margin-left:30%; width:33%; background-color:yellow; color: black; font-size: 30px; text-align: center;");
+	finalscores.innerHTML = "Leaderboard:" + "<br>" + playerInfo;
 	document.body.appendChild(cgts);
+	document.body.appendChild(finalscores);
     }
-    close();
-    console.log(currentTurn);
-    nextTurn();
-    console.log(currentTurn);
-    runThroughTurns();
     // else if(char.value!=a){
     //alert("INCORRECT!");
     //}

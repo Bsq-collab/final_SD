@@ -611,38 +611,3 @@ var setButtons = function(){
 }
 
 setButtons();
-
-/*
-  while (true) {
-  //setTimeout(runThroughTurns,2000);
-  runThroughTurns();
-  }
-*/
-//spin of the wheel
-
-
-//var player_dict; //dict of players and their points <- needed because then we'd have to grab that value way too often
-
-//everytime anyone gets a c right, give them the multiplier in points
-//everytime guesses a vowel, lose 100
-//solves questions gets 3000, but also wins so whatev
-//word hint costs 1000
-//picture hints costs 500
-
-
-/* Attributes for rotation
-   -webkit-transform:rotate(180deg);
-   -moz-transform: rotate(180deg);
-   -ms-transform: rotate(180deg);
-   -o-transform: rotate(180deg);
-   transform: rotate(180deg);
-*/
-
-
-
-
-
-//var cpuTurn = function(id)
-//guesses letter
-//if have enough money
-//   guess random index vowel from tempv

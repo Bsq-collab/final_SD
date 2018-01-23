@@ -220,3 +220,6 @@ CPUs have a one in three chance of guessing the correct answer when all consonan
 vivienL -- 2018-01-23 10:55:02
 added leaderboard to congratulations page and displays winner name
 
+vivienL -- 2018-01-23 11:02:20
+changed gameboard color
+

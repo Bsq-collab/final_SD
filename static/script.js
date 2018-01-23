@@ -63,7 +63,32 @@ var closeWheelPopup = function() {
 
 
 
-var multiplier = Math.ceil(Math.random()*10)*100;
+var multiplier;
+var timer;
+const spin = function() {
+  timer = 200;
+  var temp = index;
+  while(timer <= 3000){
+    timer += Math.random()*(timer-150);
+    console.log(timer);
+    index ++;
+    index %= 18;
+    console.log(index);
+    setTimeout(function(){
+       temp ++;
+       temp %= 18;
+      var m = multi[temp];
+      console.log(multi[temp]);
+      document.getElementById('currMultiplier').innerHTML = "Multiplier: $" + m.toString();
+    }, timer);
+  }
+  console.log();
+  multiplier = multi[index];
+}
+
+spin();
+
+ // = Math.ceil(Math.random()*10)*100;
 //spinWheel();
 //console.log(multiplier);
 
@@ -633,22 +658,6 @@ var setButtons = function(){
 	hp.disabled=true;
 	hq.disabled=true;
     }
-}
-
-const spin = function() {
-  var i = 0;
-  setTimeout(function(){
-    i += Math.random()*1000;
-    if(i <= 3000){
-      index ++;
-      index %= 18;
-      var m = multi[index];
-      console.log(i);
-      console.log(index);
-      console.log(multi[index]);
-      document.getElementById('currMultiplier').innerHTML = "Multiplier: $" + m.toString();
-    }
-  }, i);
 }
 
 setButtons();

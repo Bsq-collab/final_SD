@@ -6,7 +6,6 @@ const vow = ['a', 'e', 'i', 'o', 'u'];
 const multi = ['2500', '600', '700', '600', '600', '650', '500', '700', '600'
               , '550', '500', '600', '650', '700', '800', '500', '650', '900']
 var index = 0;
-const vowCost = 250
 const vowCost = 250;
 const hpCost = 500;
 const hqCost = 1000;
@@ -636,25 +635,19 @@ var setButtons = function(){
     }
 }
 
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-}
 const spin = function() {
-  for(var i = 0; i <= 3000; i += Math.random()*1000){
+  var i = 0;
+  i += Math.random()*1000){
+  setTimeout(function(){
+    if(i <= 3000){
     index ++;
     index %= 18;
     var m = multi[index];
     console.log(i);
     console.log(index);
     console.log(multi[index]);
-    // document.getElementById('currMultiplier').innerHTML = "Multiplier: $" + m.toString();
-    // sleep(i);
-  }
+    document.getElementById('currMultiplier').innerHTML = "Multiplier: $" + m.toString();
+  }, i);
 }
 
 setButtons();

@@ -3,7 +3,10 @@
 const cons = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
 const vow = ['a', 'e', 'i', 'o', 'u'];
-const vowCost = 250;
+const multi = ['2500', '600', '700', '600', '600', '650', '500', '700', '600'
+              , '550', '500', '600', '650', '700', '800', '500', '650', '900']
+var index = 0;
+const vowCost = 250
 
 // keeps track of current game's vowels and consts
 var tempc = cons;
@@ -30,15 +33,18 @@ console.log(ans);
 console.log(tit);
 console.log(hin);
 console.log(p);
+
 /*
-//setAttribute('style', "color: white; font-size: 80px; text-align: center;");
-//var wheel = document.getElementById('wheelimg');
-//wheel.setAttribute('-webkit-transform', 'rotate(180deg)');
-//wheel.setAttribute(' -moz-transform', 'rotate(180deg)');
-//wheel.setAttribute('-ms-transform', 'rotate(180deg)');
-//wheel.setAttribute('-o-transform', 'rotate(180deg)');
-//wheel.setAttribute('transform', 'rotate(180deg)');
+  setAttribute('style', "color: white; font-size: 80px; text-align: center;");
+  var wheel = document.getElementById('wheelimg');
+  wheel.setAttribute('-webkit-transform', 'rotate(180deg)');
+  wheel.setAttribute(' -moz-transform', 'rotate(180deg)');
+  wheel.setAttribute('-ms-transform', 'rotate(180deg)');
+  wheel.setAttribute('-o-transform', 'rotate(180deg)');
+  wheel.setAttribute('transform', 'rotate(180deg)');
 */
+
+
 //default time for spin is 5000 ms (5s)
 var spinWheel = function(){
     //popups[5].style.display = "block";
@@ -114,7 +120,7 @@ var currTurn = document.createElement("H1");
 currTurn.setAttribute("id", "currPlayer");
 currTurn.setAttribute('style', "color: white; font-size: 80px; text-align: center;");
 currTurn.innerHTML = document.getElementById('0 name').innerHTML;
-body.appendChild(currTurn);
+currTurn = body.appendChild(currTurn);
 
 //says the current multiplier
 var currMultiplier = document.createElement("H4");
@@ -467,7 +473,7 @@ var CPUfillIn = function(char){
     console.log("letters.length: "+letters.length);
     if(letters.length == 0){
 	var input = document.createElement('P');
-	input.innerHTML = "CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "', but there are none"; 
+	input.innerHTML = "CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "', but there are none";
 	messages.insertBefore(input,messages.firstChild); // = document.getElementById("buttons");
 	//messages = [input].concat(messages);
 	//document.getElementById("messages") = [input].concat(messages);
@@ -483,7 +489,7 @@ var CPUfillIn = function(char){
     setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) + (multiplier*letters.length)).toString());
     //records the message and makes the alert
     var input = document.createElement('P');
-    input.innerHTML = "CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "'"; 
+    input.innerHTML = "CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "'";
     messages.insertBefore(input,messages.firstChild); // = document.getElementById("buttons");
     alert("CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "'");
 }
@@ -560,6 +566,28 @@ var setButtons = function(){
     }
 }
 
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+const spin = function() {
+  for(var i = 0; i <= 3000; i += Math.random()*1000){
+    index ++;
+    index %= 18;
+    var m = multi[index];
+    console.log(i);
+    console.log(index);
+    console.log(multi[index]);
+    // document.getElementById('currMultiplier').innerHTML = "Multiplier: $" + m.toString();
+    // sleep(i);
+  }
+}
+
+
 /*
 while (true) {
     //setTimeout(runThroughTurns,2000);
@@ -594,4 +622,3 @@ while (true) {
     //guesses letter
     //if have enough money
     //   guess random index vowel from tempv
-    

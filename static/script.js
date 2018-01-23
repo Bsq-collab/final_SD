@@ -263,24 +263,25 @@ var guessvPop = function(){
 guessv.setAttribute("onclick", "javascript:guessvPop()");
 
 var checkv = function(){
-  var char = document.getElementById('V');
-  console.log("|" + char.value + "|");
-  if (tempv.indexOf(char.value) == -1){
-	  alert("please enter a VOWEL that hasn't been guessed previously");
-	  return;
-  }else{
-	  close();
-	  fillIn(char.value);
-  }
-  tempv.splice(tempv.indexOf(char.value), 1);
-  console.log(tempv);
-  if (tempv.length == 0) {
-	  noVLeft = true;
-	  guessv.disabled= true;
-  }
-  setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) - vowelCost).toString());
-  vowelCost *= 2;
-  guessv.innerHTML = "Guess a VOWEL ($" + vowelCost.toString() + ")";
+    var char = document.getElementById('V');
+    console.log("|" + char.value + "|");
+    if (tempv.indexOf(char.value) == -1){
+	alert("please enter a VOWEL that hasn't been guessed previously");
+	return;
+    }else{
+	close();
+	fillIn(char.value);
+    }
+    tempv.splice(tempv.indexOf(char.value), 1);
+    console.log(tempv);
+    if (tempv.length == 0) {
+	noVLeft = true;
+	guessv.disabled= true;
+    }
+    setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) - vowelCost).toString());
+    vowelCost *= 2;
+    setButtons();
+    guessv.innerHTML = "Guess a VOWEL ($" + vowelCost.toString() + ")";
 }
 //===============================ANSWER======
 // guess button brings up popup for guess

@@ -279,8 +279,9 @@ var checkv = function(){
 	guessv.disabled= true;
     }
     setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) - vowelCost).toString());
-    vowelCost *= 2;
+    //vowelCost *= 2;
     setButtons();
+    
     guessv.innerHTML = "Guess a VOWEL ($" + vowelCost.toString() + ")";
 }
 //===============================ANSWER======
@@ -395,30 +396,31 @@ hq.setAttribute("onclick", "javascript:buyQ()");
 
 
 var showQ = function(ans){
-  if (ans == "no") {
-	  close();
-	  return;
-  }
-  //document.body.innerHTML += "<br><br>";
-  //newLine();
-  //newLine();
-  //openCenter();
-  //hint.innerHTML = "<br><br>" + hint.innerHTML;
-  var display_hint = document.createElement("P");
-  display_hint.innerHTML = hint.innerHTML;
-  //hint.style.textAlign = "center";
-  //hint.style.color = "white";
-  //hint.style.backgroundColor = "rgba(255,0,0,0.4)";
-  //document.body.appendChild(hint);
-  display_hint.style.textAlign = "center";
-  display_hint.style.color = "white";
-  display_hint.style.backgroundColor = "rgba(255,0,0,0.4)";
-  document.body.appendChild(display_hint);
-  setCurrPlayerMoney((parseInt(getCurrPlayerMoney()) - hqCost).toString());
-  noQHint = true;
-  hq.disabled = true;
-  //closeCenter();
-  close();
+    if (ans == "no") {
+	close();
+	return;
+    }
+    //document.body.innerHTML += "<br><br>";
+    //newLine();
+    //newLine();
+    //openCenter();
+    //hint.innerHTML = "<br><br>" + hint.innerHTML;
+    var display_hint = document.createElement("P");
+    display_hint.innerHTML = hint.innerHTML;
+    //hint.style.textAlign = "center";
+    //hint.style.color = "white";
+    //hint.style.backgroundColor = "rgba(255,0,0,0.4)";
+    //document.body.appendChild(hint);
+    display_hint.style.textAlign = "center";
+    display_hint.style.color = "white";
+    display_hint.style.backgroundColor = "rgba(255,0,0,0.4)";
+    document.body.appendChild(display_hint);
+    setCurrPlayerMoney((parseInt(getCurrPlayerMoney()) - hqCost).toString());
+    noQHint = true;
+    hq.disabled = true;
+    setButtons();
+    //closeCenter();
+    close();
 }
 
 //===============================Picture Hint==========
@@ -434,22 +436,23 @@ hp.setAttribute("onclick", "javascript:buyP()");
 
 
 var showP = function(ans){
-  if (ans == "no") {
-	  close();
-	  return;
-  }
-  var pi="<img src='"+p+"'/>"
-  console.log("pi: "+pi);
-  var im=document.createElement("img");
-  im.setAttribute('src',p);
-  im.setAttribute('height','200px');
-  im.setAttribute('width','200px');
-  im.setAttribute('style', "display: block; margin: 0 auto;");
-  document.body.appendChild(im);
-  setCurrPlayerMoney((parseInt(getCurrPlayerMoney()) - hpCost).toString());
-  noPHint = true;
-  hp.disabled = true;
-  close();
+    if (ans == "no") {
+	close();
+	return;
+    }
+    var pi="<img src='"+p+"'/>"
+    console.log("pi: "+pi);
+    var im=document.createElement("img");
+    im.setAttribute('src',p);
+    im.setAttribute('height','200px');
+    im.setAttribute('width','200px');
+    im.setAttribute('style', "display: block; margin: 0 auto;");
+    document.body.appendChild(im);
+    setCurrPlayerMoney((parseInt(getCurrPlayerMoney()) - hpCost).toString());
+    noPHint = true;
+    hp.disabled = true;
+    setButtons();
+    close();
 }
 
 
@@ -623,11 +626,11 @@ var setButtons = function(){
 	  if (noVLeft) {
 	    guessv.disabled = true;
 	  } else {
-	    if (vowelCost > parseInt(getCurrPlayerMoney())) {
-		    guessv.disabled = true;
-	    } else {
-		    guessv.disabled = false;
-	    }
+	      if (vowelCost > parseInt(getCurrPlayerMoney())) {
+		  guessv.disabled = true;
+	      } else {
+		  guessv.disabled = false;
+	      }
 	  }
 	  if (noCLeft) {
 	    guessc.disabled = true;

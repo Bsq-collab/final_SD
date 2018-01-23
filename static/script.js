@@ -1,4 +1,3 @@
-
 // defined for game
 const cons = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
 	            'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
@@ -36,21 +35,9 @@ console.log(tit);
 console.log(hin);
 console.log(p);
 
-/*
-  setAttribute('style', "color: white; font-size: 80px; text-align: center;");
-  var wheel = document.getElementById('wheelimg');
-  wheel.setAttribute('-webkit-transform', 'rotate(180deg)');
-  wheel.setAttribute(' -moz-transform', 'rotate(180deg)');
-  wheel.setAttribute('-ms-transform', 'rotate(180deg)');
-  wheel.setAttribute('-o-transform', 'rotate(180deg)');
-  wheel.setAttribute('transform', 'rotate(180deg)');
-*/
-
-
 //default time for spin is 5000 ms (5s)
 var spinWheel = function(){
   popups[5].style.display = "block";
-  //setTimeout(function(){ popups[5].style.display = 'none'; }, 3000);
   setTimeout(closeWheelPopup, 1000);
   multiplier = Math.ceil(Math.random()*10)*100;
 }
@@ -60,8 +47,6 @@ var openWheelPopup = function() {
 var closeWheelPopup = function() {
   popups[5].style.display = "none";
 }
-
-
 
 var multiplier;
 var timer;
@@ -87,11 +72,6 @@ const spin = function() {
 }
 
 spin();
-
- // = Math.ceil(Math.random()*10)*100;
-//spinWheel();
-//console.log(multiplier);
-
 // process ans into 2d array of characters (ans[]->word; ans[][]->char)
 ans = ans.split(" ");
 for (var i = 0; i < ans.length; i++){
@@ -208,8 +188,6 @@ var fillIn = function(char){
 	  letter.innerHTML= char;
   }
   return letters.length;
-  //console.log("THIS IS THE THING: " + (parseInt(getCurrPlayerMoney())));// + (multiplier*letters.length));
-  //setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) + (multiplier*letters.length)).toString());
 }
 
 // ===================CONSONANT=========
@@ -218,7 +196,6 @@ var guessc = document.createElement("button");
 guessc = buttons.appendChild(guessc);
 guessc.innerHTML = "Guess a CONSONANT"
 var guesscPop = function(){
-  // console.log("POPUPS: "+ popups[0]);
   popups[0].style.display = "block";
 };
 guessc.setAttribute("onclick", "javascript:guesscPop()");
@@ -233,7 +210,6 @@ var checkc = function(){
 	  close();
 	  var numLetters = fillIn(char.value);
 	  var letters=document.getElementsByName(char);
-	  //setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) + (multiplier*(document.getElementsByName('char')).length)).toString());
 	  setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) + (multiplier*numLetters)).toString());
 	  console.log("CurrentMoney: " + getCurrPlayerMoney());
 	  console.log("Letters: " + letters.length);
@@ -279,7 +255,6 @@ var checkv = function(){
 	guessv.disabled= true;
     }
     setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) - vowelCost).toString());
-    //vowelCost *= 2;
     setButtons();
     
     guessv.innerHTML = "Guess a VOWEL ($" + vowelCost.toString() + ")";
@@ -332,37 +307,11 @@ var checkA = function(){
 	  document.body.appendChild(cgts);
 	  document.body.appendChild(finalscores);
   }
-  // else if(char.value!=a){
-  //alert("INCORRECT!");
-  //}
 }
 
-
 var CPUcheckA = function(){
- /* var char = document.getElementById('answer');
-    console.log("this is supposed to post");
-    console.log(char);
-    console.log("|" + char.value + "|");
-    // console.log(arrToStr(ans[0]));
-    console.log("answer: "+ ans);*/
     var a= arrToStr(ans);
     console.log("a:_"+ a+"_");
-  /*  console.log("a==char.value: "+ a==char.value);
-    if(char.value+" "==a){
-	  alert("CORRECT");
-	  document.body.innerHTML = "";
-	  var cgts = document.createElement("h1");
-	  cgts.innerHTML = "CONGRATULATIONS!" + "<br>" + "YOU GUESSED CORRECTLY!";
-	  cgts.setAttribute('style', "color: white; font-size: 100px; text-align: center;");
-	  document.body.appendChild(cgts);
-    }
-    close();
-    var input = document.createElement('P');
-    //console.log("answer: " + document.getElementById(currentTurn + ' name').innerHTML);
-    input.innerHTML = document.getElementById(currentTurn + " name").innerHTML + " answered '" + char.value + "', but it was wrong!";
-    messages.insertBefore(input,messages.firstChild); // = document.getElementById("buttons");
-    //alert("CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "'");
-    */
   if(Math.random() < 0.33){
 	  alert("CPU has guessed '"+ a + "', and they are correct!");
 	  document.body.innerHTML = "";
@@ -371,15 +320,10 @@ var CPUcheckA = function(){
 	  cgts.setAttribute('style', "color: white; font-size: 100px; text-align: center;");
 	  document.body.appendChild(cgts);
   }
-
-
   console.log(currentTurn);
   nextTurn();
   console.log(currentTurn);
   runThroughTurns();
-  // else if(char.value!=a){
-  //alert("INCORRECT!");
-  //}
 }
 
 //===============================Question Hint==========

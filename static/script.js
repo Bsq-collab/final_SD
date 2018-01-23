@@ -38,7 +38,7 @@ console.log(p);
 //default time for spin is 5000 ms (5s)
 var spinWheel = function(){
   popups[5].style.display = "block";
-  setTimeout(close, 1000);
+  setTimeout(close, 500);
   multiplier = Math.ceil(Math.random()*10)*100;
 }
 var openWheelPopup = function() {

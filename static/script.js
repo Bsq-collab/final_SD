@@ -307,6 +307,9 @@ var checkA = function(){
 	  document.body.appendChild(cgts);
 	  document.body.appendChild(finalscores);
   }
+  nextTurn();
+  runThroughTurns();
+  close();
 }
 
 var CPUcheckA = function(){

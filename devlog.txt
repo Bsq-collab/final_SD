@@ -236,3 +236,11 @@ cleaned up app.py
 charlesW -- 2018-01-23 13:27:24
 cleaned up templates
 
+ibnulJ -- 2018-01-23 15:51:29
+Fixed so that solve ends your turn. reorganized the display of picture and question hints. negative money makes all the buttons are disabled. suffered through many merge conflicts. case doesn't matter when you solve. 
+
+bayanB -- 2018-01-23 15:52:42
+moved the hints above the cpu board.
+worked on debugging with ibnul and charles. finishing touches.
+
+

@@ -637,16 +637,17 @@ var setButtons = function(){
 
 const spin = function() {
   var i = 0;
-  i += Math.random()*1000){
   setTimeout(function(){
+    i += Math.random()*1000;
     if(i <= 3000){
-    index ++;
-    index %= 18;
-    var m = multi[index];
-    console.log(i);
-    console.log(index);
-    console.log(multi[index]);
-    document.getElementById('currMultiplier').innerHTML = "Multiplier: $" + m.toString();
+      index ++;
+      index %= 18;
+      var m = multi[index];
+      console.log(i);
+      console.log(index);
+      console.log(multi[index]);
+      document.getElementById('currMultiplier').innerHTML = "Multiplier: $" + m.toString();
+    }
   }, i);
 }
 

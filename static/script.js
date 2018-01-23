@@ -4,6 +4,8 @@ const cons = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
 const vow = ['a', 'e', 'i', 'o', 'u'];
 const vowCost = 250;
+const hpCost = 500;
+const hqCost = 1000;
 
 // keeps track of current game's vowels and consts
 var tempc = cons;
@@ -41,9 +43,9 @@ console.log(p);
 */
 //default time for spin is 5000 ms (5s)
 var spinWheel = function(){
-    //popups[5].style.display = "block";
+    popups[5].style.display = "block";
     //setTimeout(function(){ popups[5].style.display = 'none'; }, 3000);
-    //setTimeout(closeWheelPopup, 3000);
+    setTimeout(closeWheelPopup, 1000);
     multiplier = Math.ceil(Math.random()*10)*100;
 }
 var openWheelPopup = function() {
@@ -52,6 +54,8 @@ var openWheelPopup = function() {
 var closeWheelPopup = function() {
     popups[5].style.display = "none";
 }
+
+
 
 var multiplier = Math.ceil(Math.random()*10)*100;
 //spinWheel();
@@ -252,7 +256,7 @@ var checkv = function(){
 body.innerHTML += "\n"
 var solve = document.createElement("button");
 solve = buttons.appendChild(solve);
-solve.innerHTML = "solve"
+solve.innerHTML = "Solve"
 var guessAPop = function(){
   popups[2].style.display = "block";
 };
@@ -297,7 +301,7 @@ var checkA = function(){
 body.innerHTML += "\n"
 var hq = document.createElement("button");
 hq = buttons.appendChild(hq);
-hq.innerHTML = "Buy Question"
+hq.innerHTML = "Buy Question ($" + hqCost.toString() + ")";
 
 var buyQ = function(){
     popups[3].style.display = "block";
@@ -326,6 +330,7 @@ var showQ = function(ans){
     display_hint.style.color = "white";
     display_hint.style.backgroundColor = "rgba(255,0,0,0.4)";
     document.body.appendChild(display_hint);
+    setCurrPlayerMoney((parseInt(getCurrPlayerMoney()) - hqCost).toString());
     noQHint = true;
     hq.disabled = true;
     //closeCenter();
@@ -336,7 +341,7 @@ var showQ = function(ans){
 body.innerHTML += "\n"
 var hp = document.createElement("button");
 hp = buttons.appendChild(hp);
-hp.innerHTML = "Buy Picture"
+hp.innerHTML = "Buy Picture ($" + hpCost.toString() + ")";
 
 var buyP = function(){
     popups[4].style.display = "block";
@@ -357,6 +362,7 @@ var showP = function(ans){
     im.setAttribute('width','200px');
     im.setAttribute('style', "display: block; margin: 0 auto;");
     document.body.appendChild(im);
+    setCurrPlayerMoney((parseInt(getCurrPlayerMoney()) - hpCost).toString());
     noPHint = true;
     hp.disabled = true;
     close();
@@ -542,12 +548,20 @@ var setButtons = function(){
 	if (noPHint) {
 	    hp.disabled = true;
 	} else {
-	    hp.disabled = false;
+	    if (hpCost > parseInt(getCurrPlayerMoney())) {
+		hp.disabled = true;
+	    } else {
+		hp.disabled = false;
+	    }
 	}
 	if (noQHint) {
 	    hq.disabled = true;
 	} else {
-	    hq.disabled = false;
+	    if (hqCost > parseInt(getCurrPlayerMoney())) {
+		hq.disabled = true;
+	    } else {
+		hq.disabled = false;
+	    }
 	}
 	solve.disabled = false;
 
@@ -559,6 +573,8 @@ var setButtons = function(){
 	hq.disabled=true;
     }
 }
+
+setButtons();
 
 /*
 while (true) {

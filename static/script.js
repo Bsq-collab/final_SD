@@ -347,12 +347,21 @@ var showQ = function(ans){
 	  close();
 	  return;
   }
-  var display_hint = document.createElement("P");
-  display_hint.innerHTML = hint.innerHTML;
-  display_hint.style.textAlign = "center";
+    
+  //document.getElementById("jqh").innerHTML=hint.innerHTML;
+  var display_hint=document.getElementById("jqh");
   display_hint.style.color = "white";
   display_hint.style.backgroundColor = "rgba(255,0,0,0.4)";
-  document.body.appendChild(display_hint);
+  display_hint.style.textAlign = "center";
+
+  var input = document.createElement('P');
+	input.innerHTML = hint.innerHTML;
+	display_hint.appendChild(input);
+
+  /*
+  var display_hint =document.createElement("P");
+  display_hint.innerHTML = hint.innerHTML;
+  document.body.appendChild(display_hint);*/
   setCurrPlayerMoney((parseInt(getCurrPlayerMoney()) - hqCost).toString());
   noQHint = true;
   hq.disabled = true;
@@ -493,7 +502,7 @@ var CPUfillIn = function(char){
   //records the message and makes the alert
   var input = document.createElement('P');
   input.innerHTML = "CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "'";
-  messages.insertBefore(input,messages.firstChild); // = document.getElementById("buttons");
+  messages.insertBefore(input,messages.firstChild); 
   alert("CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "'");
 }
 

@@ -38,7 +38,7 @@ console.log(p);
 //default time for spin is 5000 ms (5s)
 var spinWheel = function(){
   popups[5].style.display = "block";
-  setTimeout(closeWheelPopup, 1000);
+  setTimeout(close, 1000);
   multiplier = Math.ceil(Math.random()*10)*100;
 }
 var openWheelPopup = function() {
@@ -52,7 +52,7 @@ var multiplier = 0;
 var timer;
 const spin = function() {
     popups[5].style.display = "block";
-    setTimeout(closeWheelPopup, 1000);
+    setTimeout(close, 1000);
     timer = 200;
     var temp = index;
     while(timer <= 3000){
@@ -258,7 +258,7 @@ var checkv = function(){
   }
   setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) - vowelCost).toString());
   setButtons();
-  
+
   guessv.innerHTML = "Guess a VOWEL ($" + vowelCost.toString() + ")";
 }
 //===============================ANSWER======
@@ -349,7 +349,7 @@ var showQ = function(ans){
 	  close();
 	  return;
   }
-    
+
   //document.getElementById("jqh").innerHTML=hint.innerHTML;
   var display_hint=document.getElementById("jqh");
   display_hint.style.color = "white";
@@ -388,14 +388,24 @@ var showP = function(ans){
 	  close();
 	  return;
   }
-  var pi="<img src='"+p+"'/>"
+  var display_hint=document.getElementById("gph");
+
+  var input = document.createElement('img');
+  input.setAttribute('src',p);
+  input.setAttribute('height','200px');
+  input.setAttribute('width','200px');
+  input.setAttribute('style', "display: block; margin: 0 auto;");
+	//input.innerHTML = pic.innerHTML;
+	display_hint.appendChild(input);
+
+  /*var pi="<img src='"+p+"'/>"
   console.log("pi: "+pi);
   var im=document.createElement("img");
   im.setAttribute('src',p);
   im.setAttribute('height','200px');
   im.setAttribute('width','200px');
   im.setAttribute('style', "display: block; margin: 0 auto;");
-  document.body.appendChild(im);
+  document.body.appendChild(im);*/
   setCurrPlayerMoney((parseInt(getCurrPlayerMoney()) - hpCost).toString());
   noPHint = true;
   hp.disabled = true;
@@ -505,7 +515,7 @@ var CPUfillIn = function(char){
   //records the message and makes the alert
   var input = document.createElement('P');
   input.innerHTML = "CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "'";
-  messages.insertBefore(input,messages.firstChild); 
+  messages.insertBefore(input,messages.firstChild);
   alert("CPU " + (parseInt(currentTurn) - noncpu + 1) + " guessed '" + char + "'");
 }
 

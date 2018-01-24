@@ -158,7 +158,7 @@ bayanB -- 2018-01-15 10:27:30
 Displaying the question now works but the picture still requires some debugging
 
 bayanB -- 2018-01-15 10:36:01
-fixed image only problem is that it displayays more than once if u hit enter more than once. 
+fixed image only problem is that it displayays more than once if u hit enter more than once.
 
 ibnulJ -- 2018-01-16 17:56:21
 Made it so buttons cannot be used past what they were built for. For example, you cannot buy the same hint twice and you cannot buy vowels if all 5 are guessed already
@@ -232,7 +232,7 @@ cleaned up app.py
 charlesW -- 2018-01-23 13:27:24
 cleaned up templates
 
+bayanB -- 2018-01-23 22:46:53
+changed the directions page to accurately reflect our game
 charlesW -- 2018-01-23 22:54:14
 buffed up readme file
-
-

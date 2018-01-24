@@ -3,7 +3,7 @@
 ---
 Wheel of Fortune is America's Game. It will live forever in the hearts of the millions that watch it. Day by day, episode by episode, our country began to fall in love with the show hosted by Pat Sajak. The viewers watched in aww while simultaneously exercising their minds in their search for the correct phrases. When the contestants guessed the correct letters, the board would light up with the help of Vanna White, and everyone would grow one step closer to guessing the answer. Now, for the first time ever in Stuyvesant's software development class, Team ViBayan and Helibnul has reconstructed this game for the good of everyone.
 
-##### Here's a [small demo](https://www.youtube.com/watch?v=4wvkLMsNpus&feature=youtu.be) of over project by Ibnul Jahan.
+##### Here's a [small demo](https://www.youtube.com/watch?v=4wvkLMsNpus&feature=youtu.be) of over project by Ibnul Jahan. DISCLAIMER: Video does not show the most recent version.
 ## Features
 * Up to 3 players
 * Endless phrases to guess
@@ -14,7 +14,7 @@ Wheel of Fortune is America's Game. It will live forever in the hearts of the mi
 ## How it Works
   Wheel of Fortune uses the [Jeopardy API](http://jservice.io) to acquire a category, answer and question. The category will be the category for the answer, which will be used as the phrase for our game. Users will be allowed to buy hints in the form of the question from [Jeopardy API](http://jservice.io) or as an image of the answer processed through the [Getty Images API](http://developers.gettyimages.com/en/). The game continues until someone fills in or guesses the correct phrase.
 
-  The AI guesses a random valid constant until it exhausts the list of consonants and then continues onto the vowels. You can have up to 2 CPUs in any game.
+  The AI guesses a random valid constant until it exhausts the list of consonants and then continues onto the vowels. Even though they are allowed to guess more than once if they paid for a vowel, CPUs will still only guess once. You can have up to 2 CPUs in any game.
 
   This app has been tested in Chrome, Firefox and Safari.
 

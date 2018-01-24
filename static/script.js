@@ -311,7 +311,7 @@ var checkv = function(){
   }
   close();
   fillIn(char.value);
-  setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) - vowelCost).toString());
+	setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) - vowelCost).toString());
 
   tempv.splice(tempv.indexOf(char.value), 1);
 	char.value = "";
@@ -511,6 +511,7 @@ var CPUguessRandomVowel = function(){
   char = tempv[Math.floor(Math.random()*tempc.length)];
   tempv.splice(tempv.indexOf(char), 1);
   CPUfillIn(char);
+	setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) - vowelCost).toString());
   if (tempv.length == 0) {
 	  noVLeft = true;
 	  guessv.disabled = true;

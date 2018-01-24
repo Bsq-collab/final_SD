@@ -3,6 +3,7 @@
 ---
 Wheel of Fortune is America's Game. It will live forever in the hearts of the millions that watch it. Day by day, episode by episode, our country began to fall in love with the show hosted by Pat Sajak. The viewers watched in aww while simultaneously exercising their minds in their search for the correct phrases. When the contestants guessed the correct letters, the board would light up with the help of Vanna White, and everyone would grow one step closer to guessing the answer. Now, for the first time ever in Stuyvesant's software development class, Team ViBayan and Helibnul has reconstructed this game for the good of everyone.
 
+##### Here's a [small demo](https://www.youtube.com/watch?v=4wvkLMsNpus&feature=youtu.be) of over project by Ibnul Jahan.
 ## Features
 * Up to 3 players
 * Endless phrases to guess

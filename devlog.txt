@@ -253,3 +253,6 @@ buffed up readme file
 
 bayanB -- 2018-01-23 22:59:30
 now consonants and vowels are not case sensitive
+charlesW -- 2018-01-24 01:16:16
+cleaned up script.js
+

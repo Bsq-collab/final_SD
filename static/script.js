@@ -183,15 +183,14 @@ for(var i = 0; i < Xs.length; i++)
 
 // helpers for player money
 var getCurrPlayerMoney = function(){
-  return document.getElementById(currentTurn.tostring()).innerHTML;
+  return document.getElementById(currentTurn.toString()).innerHTML;
 }
 var setCurrPlayerMoney = function(amount) {
-  document.getElementById(currentTurn.tostring()).innerHTML = amount;
+  document.getElementById(currentTurn.toString()).innerHTML = amount;
 }
 // helper function that disables buttons
 var setButtons = function(){
   if (currentTurn < noncpu) {
-	  console.log("buttons being set up for user");
 	  if (noVLeft) {
 	    guessv.disabled = true;
 	  } else {
@@ -239,7 +238,7 @@ var setButtons = function(){
 // returns the amount of letters filled in
 var fillIn = function(char){
   // get all the _ with name char
-  var letters = chars.getElementsByName(char);
+  var letters = document.getElementsByName(char);
   if(letters.length == 0){
 	  alert("There are no '" + char + "'");
   }else{
@@ -276,12 +275,11 @@ var checkc = function(){
   // update board
   var numLetters = fillIn(char.value);
   setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) + (multiplier*numLetters)).toString());
-  // console.log("CurrentMoney: " + getCurrPlayerMoney());
-  char.value = "";
 
   // update consonant storage
   tempc.splice(tempc.indexOf(char.value), 1);
   console.log(tempc);
+	char.value = "";
   if (tempc.length == 0) {
 	  noCLeft = true;
 	  guessc.disabled= true;
@@ -307,7 +305,6 @@ guessv.setAttribute("onclick", "javascript:guessvPop()");
 // function for when guessv form is filled out
 var checkv = function(){
   var char = document.getElementById('V');
-  console.log("|" + char.value + "|");
   if (tempv.indexOf(char.value.toLowerCase()) == -1){
 	  alert("please enter a VOWEL that hasn't been guessed previously");
 	  return;
@@ -315,9 +312,9 @@ var checkv = function(){
   close();
   fillIn(char.value);
   setCurrPlayerMoney(((parseInt(getCurrPlayerMoney())) - vowelCost).toString());
-  char.value = "";
 
   tempv.splice(tempv.indexOf(char.value), 1);
+	char.value = "";
   console.log(tempv);
   if (tempv.length == 0) {
 	  noVLeft = true;
@@ -339,22 +336,9 @@ var guessAPop = function(){
 };
 solve.setAttribute("onclick", "javascript:guessAPop()");
 
-//
-var arrToStr=function(array){
-  var ans="";
-  for(var o=0;o<array.length;o+=1){
-	  for(var i=0;i<array[o].length;i+=1){
-	    //console.log("array[o][i]: "+array[o][i]);
-	    ans+=array[o][i];
-	  }
-	  ans+=" ";
-  }
-  console.log(ans);
-  return ans;
-}
 // function for when solve form is filled out
 var checkA = function(){
-  var input = buttons.getElementById('answer');
+  var input = document.getElementById('answer');
   if(input.value.toUpperCase() == ans2.toUpperCase()){
 	  alert("YOU ARE CORRECT");
     // clear the page and display CONGRATULATIONS
@@ -372,6 +356,7 @@ var checkA = function(){
     document.body.innerHTML += '<br><br><br>'
 	  document.body.appendChild(cgts);
 	  document.body.appendChild(finalscores);
+		return;
   }
   close();
   nextTurn();
@@ -495,7 +480,6 @@ var CPUfillIn = function(char){
   // else fill in the underscores
   for(var i=0; i<letters.length;i++){
     var letter=letters[i];
-    console.log("letter: "+ letter);
     letter.innerHTML= char;
   }
 
@@ -510,7 +494,7 @@ var CPUfillIn = function(char){
 }
 
 // cpu guess a random valid consonant
-var guessRandomConsonant = function(){
+var CPUguessRandomConsonant = function(){
   char = tempc[Math.floor(Math.random()*tempc.length)];
   tempc.splice(tempc.indexOf(char), 1);
   CPUfillIn(char);
@@ -554,6 +538,7 @@ var CPUcheckA = function(){
     document.body.innerHTML += '<br><br><br>'
     document.body.appendChild(cgts);
     document.body.appendChild(finalscores);
+		return;
   }
   nextTurn();
   runThroughTurns();

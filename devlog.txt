@@ -256,3 +256,6 @@ now consonants and vowels are not case sensitive
 charlesW -- 2018-01-24 01:16:16
 cleaned up script.js
 
+charlesW -- 2018-01-24 02:01:36
+fixed mistakes from clean up + project done
+

@@ -10,25 +10,32 @@ pd 7
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
+Whenever our page refreshed it would load a new puzzle but we figured it out!
+
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
+When an ampersand appears it is displayed as 4 separate characters
+&and
 
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+* How to use popups with javascript
+* Mastered Javascript
+* and most of all... how to deal with merge conflicts :(
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We decided to use javascript for the bulk of our project.
+Didn't include lose a turn or bankrupt.
+We didn't make our own wheel but found another way to "spin" a random number.
+   the numbers appear to spin and there is a spin gif.
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-tales of wisdom gained...
-
+We should be MORE clear in our design doc and make sure everyone is on the same page before starting.
+In the work division section we should be more specific to avoid any confusion.
 
 ||||||||||||||||||||||||||||||||||||||||||
 
@@ -215,7 +222,7 @@ ibnulJ -- 2018-01-23 04:42:12
 Money works pretty much exactly as expected. Gain money based on amounts and multiplier for consonants, lose money for vowels. As of now vowels get more expensive to add a challenge. Multiplier switches, tried to animate this but commented out code because it wouldn't work. Buttons are also completely functional now: all are disabled during the CPUs turn, and only the appropriate ones turn on during a human's turn
 
 ibnulJ -- 2018-01-23 09:57:50
-CPUs have a one in three chance of guessing the correct answer when all consonants are done. Added prices to the buttons
+CPUs have a one in three chance of guessing the correct answer when all consonants are done. Added prices to the buttons.
 
 vivienL -- 2018-01-23 10:55:02
 added leaderboard to congratulations page and displays winner name
@@ -231,6 +238,12 @@ cleaned up app.py
 
 charlesW -- 2018-01-23 13:27:24
 cleaned up templates
+
+ibnulJ -- 2018-01-23 15:51:29
+Fixed so that solve ends your turn. reorganized the display of picture and question hints. negative money makes all the buttons are disabled. suffered through many merge conflicts. case doesn't matter when you solve.
+
+bayanB -- 2018-01-23 15:52:42
+Moved the hints above the cpu board as well. Worked on debugging with ibnul and charles. Finishing touches.
 
 bayanB -- 2018-01-23 22:46:53
 changed the directions page to accurately reflect our game

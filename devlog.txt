@@ -234,5 +234,6 @@ cleaned up templates
 
 bayanB -- 2018-01-23 22:46:53
 changed the directions page to accurately reflect our game
+
 charlesW -- 2018-01-23 22:54:14
 buffed up readme file

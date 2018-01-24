@@ -61,6 +61,11 @@ $ python app.py
 ```
 After this head into a broswer and go [localhost](localhost:5000).
 
+#### Troubleshooting
+If you run into issues with loading the game check the following:
+* if you installed flask and requests with a virtualenv, make sure the venv is activated
+* make sure that the gettykeys.txt file is in the same directory as app.py and that it's only one line long.
+
 ## List of APIs/How to Procure Keys:
 * #### Getty Images - for providing picture hints
   1. Head to '''https://developer.gettyimages.com/member/register''' and fill out the form to create a free account

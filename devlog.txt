@@ -237,3 +237,6 @@ changed the directions page to accurately reflect our game
 
 charlesW -- 2018-01-23 22:54:14
 buffed up readme file
+
+bayanB -- 2018-01-23 22:59:30
+now consonants and vowels are not case sensitive

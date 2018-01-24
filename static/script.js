@@ -205,7 +205,7 @@ guessc.setAttribute("onclick", "javascript:guesscPop()");
 var checkc = function(){
   var char = document.getElementById('C');
   console.log("|" + char.value + "|");
-  if (tempc.indexOf(char.value) == -1){
+  if (tempc.indexOf(char.value.toLowerCase()) == -1){
 	  alert("please enter a CONSONANT that hasn't been guessed previously");
 	  return;
   }else{
@@ -243,7 +243,7 @@ guessv.setAttribute("onclick", "javascript:guessvPop()");
 var checkv = function(){
   var char = document.getElementById('V');
   console.log("|" + char.value + "|");
-  if (tempv.indexOf(char.value) == -1){
+  if (tempv.indexOf(char.value.toLowerCase()) == -1){
 	  alert("please enter a VOWEL that hasn't been guessed previously");
 	  return;
   }else{
@@ -289,7 +289,6 @@ var checkA = function(){
   console.log("this is supposed to post");
   console.log(char);
   console.log("|" + char.value + "|");
-  // console.log(arrToStr(ans[0]));
   console.log("answer: "+ ans);
   var a= arrToStr(ans);
   console.log("a:_"+ a+"_");
@@ -350,7 +349,6 @@ var showQ = function(ans){
 	  return;
   }
 
-  //document.getElementById("jqh").innerHTML=hint.innerHTML;
   var display_hint=document.getElementById("jqh");
   display_hint.style.color = "white";
   display_hint.style.backgroundColor = "rgba(255,0,0,0.4)";
@@ -360,10 +358,6 @@ var showQ = function(ans){
 	input.innerHTML = hint.innerHTML;
 	display_hint.appendChild(input);
 
-  /*
-  var display_hint =document.createElement("P");
-  display_hint.innerHTML = hint.innerHTML;
-  document.body.appendChild(display_hint);*/
   setCurrPlayerMoney((parseInt(getCurrPlayerMoney()) - hqCost).toString());
   noQHint = true;
   hq.disabled = true;
@@ -398,14 +392,6 @@ var showP = function(ans){
 	//input.innerHTML = pic.innerHTML;
 	display_hint.appendChild(input);
 
-  /*var pi="<img src='"+p+"'/>"
-  console.log("pi: "+pi);
-  var im=document.createElement("img");
-  im.setAttribute('src',p);
-  im.setAttribute('height','200px');
-  im.setAttribute('width','200px');
-  im.setAttribute('style', "display: block; margin: 0 auto;");
-  document.body.appendChild(im);*/
   setCurrPlayerMoney((parseInt(getCurrPlayerMoney()) - hpCost).toString());
   noPHint = true;
   hp.disabled = true;

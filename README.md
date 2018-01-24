@@ -8,14 +8,14 @@ Wheel of Fortune is America's Game. It will live forever in the hearts of the mi
 * Endless phrases to guess
 * CPU players
 * Live updating of the board
-* Access to the answer (use with integrity or to feel smart)
+* Access to the answer through the console (use with integrity or to feel smart)
 
 ## How it Works
-  Wheel of Fortune uses the [Jeopardy API](http://jservice.io) to acquire a category, answer and question. The category will be the category for the answer, which will be used as the phrase for our game. Users will be allowed to buy hints in the form of the question from [Jeopardy API](http://jservice.io) or an image of the answer processed through the [Getty Images API](http://developers.gettyimages.com/en/). The game continues until someone fills in or guesses the correct phrase.
+  Wheel of Fortune uses the [Jeopardy API](http://jservice.io) to acquire a category, answer and question. The category will be the category for the answer, which will be used as the phrase for our game. Users will be allowed to buy hints in the form of the question from [Jeopardy API](http://jservice.io) or as an image of the answer processed through the [Getty Images API](http://developers.gettyimages.com/en/). The game continues until someone fills in or guesses the correct phrase.
 
-  The AI guesses a random valid constant until it exhausts the list and then continues onto the vowels. You can have up to 2 CPUs in any game.
+  The AI guesses a random valid constant until it exhausts the list of consonants and then continues onto the vowels. You can have up to 2 CPUs in any game.
 
-  This app has been tested in Chrome, Firefox and Safari
+  This app has been tested in Chrome, Firefox and Safari.
 
 ### Dependencies
 * Python 2.7
@@ -31,7 +31,7 @@ $ sudo apt install python2.7
 ```
 
 ### Virtual Environment - All additional installs should ideally be made in a Virtual Environment
-To install a venv called <name>, run these commands in your terminal:
+To install a venv called \<name\>, run these commands in your terminal:
 ```
 $ pip install virtualenv
 $ virtualenv <name>
@@ -59,12 +59,13 @@ $ git clone https://github.com/bberri1205/final_SD.git
 $ cd final_SD
 $ python app.py
 ```
+After this head into a broswer and go [localhost](localhost:5000).
 
 ## List of APIs/How to Procure Keys:
 * #### Getty Images - for providing picture hints
   1. Head to '''https://developer.gettyimages.com/member/register''' and fill out the form to create a free account
   2. Check your email or the site for the API key
-  3. Copy the key into the '''gettykeys.txt''' file in the root of the directory. It should be the first and only line in the file, formatted as such:
+  3. Copy the key into the '''gettykeys.txt''' file in the root of the directory. It should be the first and only line in the file
 
 * #### JService - for providing phrases, categories, and sentence hints
   1. JService does not require a key, so don't worry about finding one

@@ -1,23 +1,61 @@
+#buttons {
+  margin-left: 20%;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+#gamebody {
+  background-image: url('img/game.jpg');
+  background-size: cover;
+  background-position: center top;
+}
+#gamebody button{
+  border-radius: 10px;
+  background: white;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border: 2px solid #e7e7e7;
+}
+#gamebody button:hover{
+  background-color: #C0C0C0;
+}
+#homebody {
+  background-image: url('img/home.jpg');
+  background-size: cover;
+  color: white;
+}
+#homebody .notNav a {
+  border-radius: 10px;
+  background: white;
+}
+#signbody {
+  background-image: url('img/home.jpg');
+  background-size: cover;
+  color: white;
+}
+#signbody .notNav a {
+  border-radius: 10px;
+  background: white;
+}
+#anst{
+  display: none;
+}
+#title{
+  display: none;
+}
+#hint{
+  display: none;
+}
+#pic{
+  display: none;
+}
 .notNav {
   padding-left: 3%;
   padding-right: 3%;
 }
-
 .nav-item {
   padding-left: 2px;
   padding-right: 6px;
-}
-#anst{
-    display: none;
-}
-#title{
-    display: none;
-}
-#hint{
-    display: none;
-}
-#pic{
-    display: none;
 }
 .inlineList {
   display: flex;
@@ -28,13 +66,11 @@
   white-space: nowrap;
   justify-content: center;
 }
-
 .char {
   padding: 4px;
   color: black;
   font-size: 30px;
 }
-
 .popup {
     display: none; /* [popups are ]idden by default */
     position: fixed;
@@ -48,7 +84,6 @@
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4)
 }
-
 .words {
     background-color: #fefefe;
     margin: auto;
@@ -56,65 +91,16 @@
     border: 1px solid #888;
     width: 80%;
 }
-
 .close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
-
-#homebody {
-  background-image: url('img/home.jpg');
-  background-size: cover;
-  color: white;
-}
-
-#homebody .notNav a {
-  border-radius: 10px;
-  background: white;
-}
-
-#signbody {
-  background-image: url('img/home.jpg');
-  background-size: cover;
-  color: white;
-}
-
-#signbody .notNav a {
-  border-radius: 10px;
-  background: white;
-}
-
-#gamebody {
-  background-image: url('img/game.jpg');
-  background-size: cover;
-  background-position: center top;
-}
-
 .category {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   text-align: center;
   color: black;
   font-size: 20px;
-}
-
-#buttons {
-  margin-left: 20%;
-  width: 60%;
-  display: flex;
-  justify-content: space-between;
-}
-
-#gamebody button{
-  border-radius: 10px;
-  background: white;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  border: 2px solid #e7e7e7;
-}
-
-#gamebody button:hover{
-  background-color: #C0C0C0;
 }

@@ -235,8 +235,8 @@ cleaned up templates
 bayanB -- 2018-01-23 22:46:53
 changed the directions page to accurately reflect our game
 
-bayanB -- 2018-01-23 22:59:30
-now consonants and vowels taare not case sensitive
-
 charlesW -- 2018-01-23 22:54:14
 buffed up readme file
+
+bayanB -- 2018-01-23 22:59:30
+now consonants and vowels are not case sensitive

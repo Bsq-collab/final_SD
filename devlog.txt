@@ -232,3 +232,6 @@ cleaned up app.py
 charlesW -- 2018-01-23 13:27:24
 cleaned up templates
 
+bayanB -- 2018-01-23 22:46:53
+changed the directions page to accurately reflect our game
+

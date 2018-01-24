@@ -7,9 +7,14 @@ f="wof.db"
 db=sqlite3.connect(f)
 c=db.cursor()
 
-#~~~~~~~~~~~~~~~~~~populating tables~~~~~~~~~~~~~~~~~~~
+'''
+====================================================================
+                We did not fully implement databases
+====================================================================
+'''
 
 
+# ~~~~~~~~~~~~~~~~~~populating tables~~~~~~~~~~~~~~~~~~~
 def populate(dictionary, tblname, col1,col2,col3,col4):
         add= "INSERT INTO "+ tblname + " VALUES ('" + dictionary[col1] + "','" + dictionary[col2] + "','" + dictionary[col3] +"','"+col4+ "')"
         #print "\n\nadd: " + add

@@ -10,20 +10,23 @@ pd 7
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Whenever our page refreshed it would load a new puzzle but we figured it out!
+Whenever we submitted a form it would refresh the page but we figured it out and made our own popups!
+Multiple project revisions
 
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-When an ampersand appears it is displayed as 4 separate characters
-&and
+When an ampersand appears, it is displayed as 5 separate characters (&amp;)
+When a ' appears, it is displayed as just a \
+There is a chance for a completely non-alphabetical answer to appear
 
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* How to use popups with javascript
+* How to make custom popups with javascript
 * Mastered Javascript
 * and most of all... how to deal with merge conflicts :(
+
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,11 +34,12 @@ We decided to use javascript for the bulk of our project.
 Didn't include lose a turn or bankrupt.
 We didn't make our own wheel but found another way to "spin" a random number.
    the numbers appear to spin and there is a spin gif.
+We didn't implement the offline database into our project
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We should be MORE clear in our design doc and make sure everyone is on the same page before starting.
-In the work division section we should be more specific to avoid any confusion.
+In the work division section we should be more specific to avoid any confusion/people making excuses about avoiding work.
 
 ||||||||||||||||||||||||||||||||||||||||||
 
@@ -258,4 +262,3 @@ cleaned up script.js
 
 charlesW -- 2018-01-24 02:01:36
 fixed mistakes from clean up + project done
-

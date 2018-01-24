@@ -7,7 +7,11 @@ f="wof.db"
 db=sqlite3.connect(f)
 c=db.cursor()
 
-
+'''
+====================================================================
+                We did not fully implement databases
+====================================================================
+'''
 #~~~~~~~~~~~~~~~~~~creating tables~~~~~~~~~~~~~~~~~~~
 command= "CREATE TABLE question(phrase TEXT PRIMARY KEY, category TEXT, question TEXT, image TEXT)"
 c.execute(command)

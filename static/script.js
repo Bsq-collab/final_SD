@@ -522,27 +522,22 @@ var CPUguessRandomVowel = function(){
 
 // function for CPU to 'guess' answer
 var CPUcheckA = function(){
-  if(Math.random() < 0.33){
-	  alert("CPU has guessed '"+ ans2 + "', and they are correct!");
-    // clear the page and display CONGRATULATIONS
-    var playerInfo = document.getElementById("playernav").innerHTML;
-    var winner = document.getElementById('currPlayer').innerHTML;
-    var navbar = document.getElementsByTagName('nav')[0];
-    document.body.innerHTML = "";
-    var cgts = document.createElement("h1");
-    cgts.innerHTML = "CONGRATULATIONS!" + "<br>" + winner + " solved correctly!";
-    cgts.setAttribute('style', "color: white; font-size: 100px; text-align: center;");
-    var finalscores = document.createElement("div");
-    finalscores.setAttribute('style', "margin-left:30%; width:33%; background-color:yellow; color: black; font-size: 30px; text-align: center;");
-    finalscores.innerHTML = "Leaderboard:" + "<br>" + playerInfo;
-    document.body.appendChild(navbar);
-    document.body.innerHTML += '<br><br><br>'
-    document.body.appendChild(cgts);
-    document.body.appendChild(finalscores);
-		return;
-  }
-  nextTurn();
-  runThroughTurns();
+  alert("CPU has guessed '"+ ans2 + "', and they are correct!");
+  // clear the page and display CONGRATULATIONS
+  var playerInfo = document.getElementById("playernav").innerHTML;
+  var winner = document.getElementById('currPlayer').innerHTML;
+  var navbar = document.getElementsByTagName('nav')[0];
+  document.body.innerHTML = "";
+  var cgts = document.createElement("h1");
+  cgts.innerHTML = "CONGRATULATIONS!" + "<br>" + winner + " solved correctly!";
+  cgts.setAttribute('style', "color: white; font-size: 100px; text-align: center;");
+  var finalscores = document.createElement("div");
+  finalscores.setAttribute('style', "margin-left:30%; width:33%; background-color:yellow; color: black; font-size: 30px; text-align: center;");
+  finalscores.innerHTML = "Leaderboard:" + "<br>" + playerInfo;
+  document.body.appendChild(navbar);
+  document.body.innerHTML += '<br><br><br>'
+  document.body.appendChild(cgts);
+  document.body.appendChild(finalscores);
 }
 
 // prints current turn and sees if CPU needs to go

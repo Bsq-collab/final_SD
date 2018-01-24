@@ -4,12 +4,15 @@ import urllib2
 import json
 
 def jeopardy():
+    '''
+    returns a dictionary with the jeopardy question, category title, and answer
+
+    '''
     round_dict = {}
     try:
         global jeopardy_url
         uread = urllib2.urlopen(jeopardy_url).read()
         udict = json.loads(uread)[0]
-        #round_dict = {}
         round_dict['hint'] = fix_answer(udict['question'])
         round_dict['title'] = fix_answer(udict['category']['title'])
         round_dict['answer'] = fix_answer(udict['answer'])
@@ -23,37 +26,31 @@ def jeopardy():
 
 
 def fix_answer(thing):
+    '''
+    initially jeopardy has some hidden tags and apostrophes and quotes that can break our code.
+    We parse through all jService lines and remove tags, parentheses, and quotes.
+    '''
     final = thing.lower()
-    # print "THIS IS THE THING: " + final
     try:
         while (True):
             start = final.index('<')
             end = final.index('>')
             final = final[:start] + final[end+1:]
-            # print final
+
     except:
         try:
             while (True):
                 start = final.index('(')
                 end = final.index(')')
                 final = final[:start] + final[end+1:]
-            # print final
         except:
             try:
                 while (True):
                     ind = final.index("'")
 
                     final = final[0:ind] + final[ind+1:]
-                    #  print "final: \n\n"+ final+"\n\n"
+
             except:
-                print "no gang signs"
+               print "no change needed"
 
     return final
-
-
-dictionary = jeopardy();
-print "\n\n\n\n\n dictionary:"
-print dictionary
-print "\n\ndictionary[hint]: " + dictionary['hint']
-print "\n\ndictionary['title']: " + dictionary['title']
-print "\n\ndictionary[answer]: " + dictionary["answer"]

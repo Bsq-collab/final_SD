@@ -18,7 +18,7 @@ def getKey():
         return ""
 
 
-def image(answer):  # input the description of the desired image, which is the answer to the jeopardy question
+def image(answer):
     '''
     takes a parameter answer which is the answer to the jeopardy question.
     returns a link to the image that loads.
